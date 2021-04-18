@@ -15,6 +15,12 @@ public class Locust : MonoBehaviour
     public void handTouchedLocust()
     {
         Debug.Log("touched locust");
+        //gameManager.caughtLocust();
+        //Destroy(this.gameObject);
+    }
+
+    public void caughtLocust()
+    {
         gameManager.caughtLocust();
         Destroy(this.gameObject);
     }

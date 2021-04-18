@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text moneyIndicatorText;
     public TMP_Text winText;
 
+
     [Header("Global Params")]
     public float moneyPerLocust = 0.01f;
     public float moneyToWin = 0.01f;
