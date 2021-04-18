@@ -257,11 +257,13 @@ public class OVRSkeleton : MonoBehaviour
 			{
 				var capsule = skeleton.BoneCapsules[i];
 				Transform bone = Bones[capsule.BoneIndex].Transform;
+                bone.tag = transform.tag;
 
 				var capsuleRigidBodyGO = new GameObject((_bones[capsule.BoneIndex].Id).ToString() + "_CapsuleRigidBody");
 				capsuleRigidBodyGO.transform.SetParent(_capsulesGO.transform, false);
 				capsuleRigidBodyGO.transform.position = bone.position;
 				capsuleRigidBodyGO.transform.rotation = bone.rotation;
+                capsuleRigidBodyGO.transform.tag = transform.tag;
 
 				var capsuleRigidBody = capsuleRigidBodyGO.AddComponent<Rigidbody>();
 				capsuleRigidBody.mass = 1.0f;
@@ -272,6 +274,7 @@ public class OVRSkeleton : MonoBehaviour
 				var capsuleColliderGO = new GameObject((_bones[capsule.BoneIndex].Id).ToString() + "_CapsuleCollider");
 				capsuleColliderGO.transform.SetParent(capsuleRigidBodyGO.transform, false);
 				var capsuleCollider = capsuleColliderGO.AddComponent<CapsuleCollider>();
+                capsuleCollider.tag = transform.tag;
 				var p0 = capsule.Points[0].FromFlippedXVector3f();
 				var p1 = capsule.Points[1].FromFlippedXVector3f();
 				var delta = p1 - p0;
