@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public float currentMoney = 0;
     public float timeLeftInDay;
     public float bugSpawnTimer;
+    bool dayComplete;
 
     [Header("Links")]
     public TMP_Text moneyIndicatorText;
@@ -49,9 +50,17 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         timeLeftInDay -= Time.deltaTime;
-        if (timeLeftInDay <= 0f)
+        if (timeLeftInDay <= 0f && !dayComplete)
         {
             Debug.Log("Day over!!!");
+            bugSpawnTimer = 100000f;
+            List<Locust> allActiveLocust = new List<Locust>(FindObjectsOfType<Locust>());
+            foreach(Locust l in allActiveLocust)
+            {
+                l.moveSpeed *= 5;
+                l.targetExitLocation = getRandomExitLocation();
+            }
+            dayComplete = true;
         }
         bugSpawnTimer -= Time.deltaTime;
         if (bugSpawnTimer <= 0)
