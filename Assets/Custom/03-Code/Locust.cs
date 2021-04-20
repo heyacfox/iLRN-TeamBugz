@@ -7,6 +7,7 @@ public class Locust : MonoBehaviour
     GameManager gameManager;
     LocustLandLocation occupiedLocustLandLocation;
     public LocustLandLocation targetLandLocation;
+    public Transform targetExitLocation;
     Rigidbody myRigidbody;
 
     public float moveSpeed;
@@ -57,7 +58,11 @@ public class Locust : MonoBehaviour
 
     public void Update()
     {
-        if (occupiedLocustLandLocation != null)
+        if (targetExitLocation != null)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetExitLocation.transform.position, Time.deltaTime * moveSpeed);
+        }
+        else if (occupiedLocustLandLocation != null)
         {
             occupiedLocustLandLocation.munchTimeLeft -= Time.deltaTime;
             if (occupiedLocustLandLocation.munchTimeLeft <= 0)
@@ -75,6 +80,9 @@ public class Locust : MonoBehaviour
         } else if (targetLandLocation != null && useBasicMove)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetLandLocation.transform.position, Time.deltaTime * moveSpeed);
+        } else
+        {
+            pickNewLandLocation();
         }
     }
 
@@ -86,6 +94,8 @@ public class Locust : MonoBehaviour
         {
             Debug.Log("No more locations left");
             //Somehow, fly away? there's nothing left to munch?
+            moveSpeed *= 5;
+            targetExitLocation = gameManager.getRandomExitLocation();
         }
     }
 
@@ -108,6 +118,9 @@ public class Locust : MonoBehaviour
             {
                 occupyLocation(landLocation);
             }
+        } else if (other.gameObject.tag == "LocustExit")
+        {
+            Destroy(this.gameObject);
         }
     }
 }

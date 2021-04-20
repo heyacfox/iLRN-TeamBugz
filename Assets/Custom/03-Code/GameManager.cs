@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text winText;
     public GlobalParams globalParams;
     public List<Transform> BugSpawnLocations;
+    List<Transform> exitLocations;
+    public Transform exitLocationsParent;
     public Transform bugLocationsParent;
     public GameObject locustPrefab;
 
@@ -31,6 +33,16 @@ public class GameManager : MonoBehaviour
         {
             BugSpawnLocations.Add(c);
         }
+        exitLocations = new List<Transform>();
+        foreach(Transform c in exitLocationsParent)
+        {
+            exitLocations.Add(c);
+        }
+    }
+
+    public Transform getRandomExitLocation()
+    {
+        return exitLocations[Random.Range(0, exitLocations.Count)];
     }
 
 
@@ -44,8 +56,16 @@ public class GameManager : MonoBehaviour
         bugSpawnTimer -= Time.deltaTime;
         if (bugSpawnTimer <= 0)
         {
-            spawnBugs();
-            bugSpawnTimer = globalParams.bugSpawnEveryXSeconds;
+            //if there's more to munch
+            if (cropManager.getRandomLandLocation() != null)
+            {
+                spawnBugs();
+                bugSpawnTimer = globalParams.bugSpawnEveryXSeconds;
+            } else
+            {
+                bugSpawnTimer = 10000f;
+            }
+            
         }
     }
 

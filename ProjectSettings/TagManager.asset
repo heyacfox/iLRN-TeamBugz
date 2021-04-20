@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerHands
   - LandLocation
+  - LocustExit
   layers:
   - Default
   - TransparentFX
