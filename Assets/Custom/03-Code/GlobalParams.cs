@@ -11,4 +11,8 @@ public class GlobalParams : ScriptableObject
     public float locustMunchAtLocationMaxTime = 10f;
     public float moneyPerCropSaved = 0.5f;
     public float locustBasicMoveSpeed = 5f;
+    public float timePerDay = 60f;
+
+    public float bugSpawnEveryXSeconds = 5f;
+    public float bugSpawnAmountPerWave = 3f;
 }
