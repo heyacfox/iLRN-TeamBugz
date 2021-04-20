@@ -76,6 +76,15 @@ public class GameManager : MonoBehaviour
             }
             
         }
+
+        if (dayComplete)
+        {
+            //watch until there are no bugs left?
+            if (FindObjectsOfType<Locust>().Length <= 0)
+            {
+                //all the bugs have left. Show the player how much money they have from crops. 
+            }
+        }
     }
 
     private void spawnBugs()
