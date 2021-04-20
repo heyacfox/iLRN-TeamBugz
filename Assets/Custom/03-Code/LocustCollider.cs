@@ -13,5 +13,18 @@ public class LocustCollider : MonoBehaviour
         {
             linkedLocust.handTouchedLocust();
         }
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "LandLocation")
+        {
+            LocustLandLocation landLocation = other.gameObject.GetComponent<LocustLandLocation>();
+            if (!landLocation.isOccupied)
+            {
+                linkedLocust.occupyLocation(landLocation);
+            }
+        }
     }
 }

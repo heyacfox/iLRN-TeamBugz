@@ -11,12 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("Links")]
     public TMP_Text moneyIndicatorText;
     public TMP_Text winText;
-
-
-    [Header("Global Params")]
-    public float moneyPerLocust = 0.01f;
-    public float moneyToWin = 0.01f;
-
+    public GlobalParams globalParams;
     
 
     public void updateMoney(float moneyAmount)
@@ -28,12 +23,12 @@ public class GameManager : MonoBehaviour
 
     public void caughtLocust()
     {
-        updateMoney(moneyPerLocust);
+        updateMoney(globalParams.moneyPerLocust);
     }
 
     public void checkWinState()
     {
-        if (currentMoney >= moneyToWin)
+        if (currentMoney >= globalParams.moneyToWin)
         {
             winText.text = "You Win!";
         }
