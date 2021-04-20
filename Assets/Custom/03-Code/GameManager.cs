@@ -12,7 +12,15 @@ public class GameManager : MonoBehaviour
     public TMP_Text moneyIndicatorText;
     public TMP_Text winText;
     public GlobalParams globalParams;
-    
+
+    public CropManager cropManager;
+
+
+    private void Awake()
+    {
+        cropManager = FindObjectOfType<CropManager>();
+    }
+
 
     public void updateMoney(float moneyAmount)
     {

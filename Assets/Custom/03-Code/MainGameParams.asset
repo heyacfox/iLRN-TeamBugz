@@ -16,3 +16,4 @@ MonoBehaviour:
   moneyToWin: 0.01
   locustMunchAtLocationMaxTime: 10
   moneyPerCropSaved: 0.5
+  locustBasicMoveSpeed: 0.5

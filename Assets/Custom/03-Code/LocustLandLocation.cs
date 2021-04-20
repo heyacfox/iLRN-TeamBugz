@@ -12,13 +12,18 @@ public class LocustLandLocation : MonoBehaviour
     
 
 
-    private void Start()
+    private void Awake()
     {
         parentCrop = transform.GetComponentInParent<Crop>();
         gameManager = FindObjectOfType<GameManager>();
         munchTimeLeft = gameManager.globalParams.locustMunchAtLocationMaxTime;
     }
-    
+
+    public void OnDestroy()
+    {
+        parentCrop.removeLandLocation(this);
+    }
+
 
 
 }

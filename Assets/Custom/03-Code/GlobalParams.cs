@@ -10,4 +10,5 @@ public class GlobalParams : ScriptableObject
     //ten seconds of munching per valid location on crop before land location is destroyed.
     public float locustMunchAtLocationMaxTime = 10f;
     public float moneyPerCropSaved = 0.5f;
+    public float locustBasicMoveSpeed = 5f;
 }
