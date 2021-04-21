@@ -12,12 +12,18 @@ public class Locust : MonoBehaviour
 
     public float moveSpeed;
     bool useBasicMove = true;
+    public AudioClip squishSound;
+    public AudioClip munchLoop;
+
+    AudioSource audioSource;
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         myRigidbody = GetComponent<Rigidbody>();
         moveSpeed = gameManager.globalParams.locustBasicMoveSpeed;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0f;
     }
 
     private void Start()
@@ -35,6 +41,7 @@ public class Locust : MonoBehaviour
 
     public void caughtLocust()
     {
+        AudioSource.PlayClipAtPoint(squishSound, this.transform.position);
         gameManager.caughtLocust();
         Destroy(this.gameObject);
     }
@@ -58,6 +65,7 @@ public class Locust : MonoBehaviour
 
     public void Update()
     {
+        audioSource.volume = 0f;
         if (targetExitLocation != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetExitLocation.transform.position, Time.deltaTime * moveSpeed);
@@ -65,8 +73,10 @@ public class Locust : MonoBehaviour
         else if (occupiedLocustLandLocation != null)
         {
             occupiedLocustLandLocation.munchTimeLeft -= Time.deltaTime;
+            audioSource.volume = 1f;
             if (occupiedLocustLandLocation.munchTimeLeft <= 0)
             {
+                
                 //Destroy the munch location somehow?
                 //certainly stop occupying it.
                 Destroy(occupiedLocustLandLocation.gameObject);

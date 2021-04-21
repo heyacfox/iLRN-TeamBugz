@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16442ef1477509d4fbe63f9f89c0854c, type: 3}
   m_Name: MainGameParams
   m_EditorClassIdentifier: 
-  timePerDay: 10
+  timePerDay: 60
   moneyPerLocust: 0.05
   moneyToWin: 1.75
   moneyPerCropSaved: 0.5
