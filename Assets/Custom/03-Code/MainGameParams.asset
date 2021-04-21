@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16442ef1477509d4fbe63f9f89c0854c, type: 3}
   m_Name: MainGameParams
   m_EditorClassIdentifier: 
-  moneyPerLocust: 0.01
-  moneyToWin: 0.01
-  locustMunchAtLocationMaxTime: 10
-  moneyPerCropSaved: 0.5
-  locustBasicMoveSpeed: 0.5
   timePerDay: 10
+  moneyPerLocust: 0.05
+  moneyToWin: 1.75
+  moneyPerCropSaved: 0.5
+  locustMunchAtLocationMaxTime: 10
+  locustBasicMoveSpeed: 0.5
   bugSpawnEveryXSeconds: 5
   bugSpawnAmountPerWave: 3

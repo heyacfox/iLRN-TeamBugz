@@ -35,6 +35,11 @@ public class CropManager : MonoBehaviour
         
     }
 
+    public float cropsCurrent()
+    {
+        return allCrops.Count;
+    }
+
     public void removeCrop(Crop crop)
     {
         //if you run out of crops...game over? Still play? What happens here?
