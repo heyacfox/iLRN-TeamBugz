@@ -64,9 +64,8 @@ public class PinchArea : MonoBehaviour
         else if (m_renderer.material.color == Color.red)
             m_renderer.material.color = Color.white;
 
-
-        if (m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Index) ||
-            m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Index))
+        if ((m_isIndexStaying[0] && m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Index))
+            || (m_isIndexStaying[1] && m_hands[1].GetFingerIsPinching(OVRHand.HandFinger.Index)))
         {
             if (onIndexPinched.GetPersistentEventCount() > 0)
             {
