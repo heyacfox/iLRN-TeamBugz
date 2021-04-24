@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 1015901313
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bf27b417c1a88aeb348a9a2188e8d0e5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/ControllerBoxTextures/ButtonGlow.jpg
+Dependencies: []

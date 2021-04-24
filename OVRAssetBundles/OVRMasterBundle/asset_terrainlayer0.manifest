@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 179569366
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8faa4ff4bcd7f31c79bdc51076a6a186
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0b1b996afefcdb43727f3042384e65d2
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 1953259897
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/NewLayer.terrainlayer
+Dependencies:
+- D:/GitCodeReposD/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png0

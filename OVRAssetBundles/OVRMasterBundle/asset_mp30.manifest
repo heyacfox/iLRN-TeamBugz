@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 30464722
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fd5f75fd5e64211fc887a8a4a9ad52d0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Custom/02-Sound/locustEating.mp3
+- Assets/Custom/02-Sound/locustSquish.mp3
+Dependencies: []

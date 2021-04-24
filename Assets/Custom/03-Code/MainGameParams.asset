@@ -19,4 +19,4 @@ MonoBehaviour:
   locustMunchAtLocationMaxTime: 10
   locustBasicMoveSpeed: 0.5
   bugSpawnEveryXSeconds: 5
-  bugSpawnAmountPerWave: 3
+  bugSpawnAmountPerWave: 1
