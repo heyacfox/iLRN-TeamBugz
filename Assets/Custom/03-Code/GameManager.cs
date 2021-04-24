@@ -125,8 +125,8 @@ public class GameManager : MonoBehaviour
         List<Locust> allActiveLocust = new List<Locust>(FindObjectsOfType<Locust>());
         foreach (Locust l in allActiveLocust)
         {
-            l.moveSpeed *= 5;
-            l.targetExitLocation = getRandomExitLocation();
+            //l.moveSpeed *= 5;
+            l.boid.Goal = getRandomExitLocation();
         }
         gameState = GameState.LocustsLeaving;
     }

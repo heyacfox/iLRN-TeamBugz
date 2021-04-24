@@ -6,8 +6,6 @@ public class Locust : MonoBehaviour
 {
     GameManager gameManager;
     LocustLandLocation occupiedLocustLandLocation;
-    public LocustLandLocation targetLandLocation;
-    public Transform targetExitLocation;
     Rigidbody myRigidbody;
 
     public float moveSpeed;
@@ -19,12 +17,15 @@ public class Locust : MonoBehaviour
 
     LocustState locustState;
 
+    public Boid boid;
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         myRigidbody = GetComponent<Rigidbody>();
         moveSpeed = gameManager.globalParams.locustBasicMoveSpeed;
         audioSource = GetComponent<AudioSource>();
+        boid = GetComponent<Boid>();
         audioSource.volume = 0f;
 
     }
@@ -39,7 +40,7 @@ public class Locust : MonoBehaviour
     public void handTouchedLocust()
     {
         Debug.Log("touched locust");
-        targetExitLocation = gameManager.getRandomExitLocation();
+        boid.Goal = gameManager.getRandomExitLocation();
         //gameManager.caughtLocust();
         //Destroy(this.gameObject);
     }
@@ -47,6 +48,8 @@ public class Locust : MonoBehaviour
     public void caughtLocust()
     {
         AudioSource.PlayClipAtPoint(squishSound, this.transform.position);
+        if (occupiedLocustLandLocation !=null) occupiedLocustLandLocation.isOccupied = false;
+
         gameManager.caughtLocust();
         Destroy(this.gameObject);
     }
@@ -75,7 +78,7 @@ public class Locust : MonoBehaviour
         
         if (locustState == LocustState.exiting)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetExitLocation.transform.position, Time.deltaTime * moveSpeed);
+            
         }
         else if (locustState == LocustState.eating)
         {
@@ -94,9 +97,9 @@ public class Locust : MonoBehaviour
                 //find a new place to go
                 pickNewLandLocation();
             }
-        } else if (locustState == LocustState.flyingToTarget && useBasicMove)
+        } else if (locustState == LocustState.flyingToTarget)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetLandLocation.transform.position, Time.deltaTime * moveSpeed);
+            
         } else
         {
             pickNewLandLocation();
@@ -106,15 +109,16 @@ public class Locust : MonoBehaviour
     private void pickNewLandLocation()
     {
         //If this returns absolutely nothing, what should I do?
-        targetLandLocation = gameManager.cropManager.getRandomLandLocation();
-        if (targetLandLocation == null)
+        LocustLandLocation tempLocation = gameManager.cropManager.getRandomLandLocation();
+        if (tempLocation == null)
         {
             Debug.Log("No more locations left");
             //Somehow, fly away? there's nothing left to munch?
-            moveSpeed *= 5;
-            targetExitLocation = gameManager.getRandomExitLocation();
+            //moveSpeed *= 5;
+            boid.Goal = gameManager.getRandomExitLocation();
             locustState = LocustState.exiting;
         }
+        boid.Goal = tempLocation.transform;
         locustState = LocustState.flyingToTarget;
     }
 

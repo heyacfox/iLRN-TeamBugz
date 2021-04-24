@@ -60,7 +60,7 @@ public class Boid : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         // For Testing
-        rb.AddForce(new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-5f, 5f)), ForceMode.VelocityChange);
+        //rb.AddForce(new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-5f, 5f)), ForceMode.VelocityChange);
     }
 
     // Might want to change this into a coroutine if too costly to call every FixedUpdate
@@ -70,7 +70,8 @@ public class Boid : MonoBehaviour
         neighbors.Clear();
         foreach (Collider c in colliders)
         {
-            if (!c.GetComponent<Boid>().ReachedGoal)
+
+            if (c.GetComponent<Boid>() != null && !c.GetComponent<Boid>().ReachedGoal)
             {
                 neighbors.Add(c.transform);
             }
@@ -132,7 +133,7 @@ public class Boid : MonoBehaviour
         FindNeighbors();
         CalculateVectors();
         Vector3 newVelocity = cohesion * CohesionWeight + separation * SeparationWeight + alignment * AlignmentWeight + toGoal * GoalWeight;
-        Vector3.ClampMagnitude(newVelocity, MaxSpeed);
+        newVelocity = Vector3.ClampMagnitude(newVelocity, MaxSpeed);
 
         rb.AddForce(newVelocity - rb.velocity, ForceMode.VelocityChange);
 
