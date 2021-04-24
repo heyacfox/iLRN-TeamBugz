@@ -17,6 +17,8 @@ public class Locust : MonoBehaviour
 
     AudioSource audioSource;
 
+    LocustState locustState;
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -24,17 +26,20 @@ public class Locust : MonoBehaviour
         moveSpeed = gameManager.globalParams.locustBasicMoveSpeed;
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = 0f;
+
     }
 
     private void Start()
     {
         pickNewLandLocation();
+        
     }
 
 
     public void handTouchedLocust()
     {
         Debug.Log("touched locust");
+        targetExitLocation = gameManager.getRandomExitLocation();
         //gameManager.caughtLocust();
         //Destroy(this.gameObject);
     }
@@ -58,6 +63,7 @@ public class Locust : MonoBehaviour
         transform.position = landLocation.transform.position;
         transform.rotation = landLocation.transform.rotation;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        locustState = LocustState.eating;
 
 
 
@@ -66,11 +72,12 @@ public class Locust : MonoBehaviour
     public void Update()
     {
         audioSource.volume = 0f;
-        if (targetExitLocation != null)
+        
+        if (locustState == LocustState.exiting)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetExitLocation.transform.position, Time.deltaTime * moveSpeed);
         }
-        else if (occupiedLocustLandLocation != null)
+        else if (locustState == LocustState.eating)
         {
             occupiedLocustLandLocation.munchTimeLeft -= Time.deltaTime;
             audioSource.volume = 1f;
@@ -87,7 +94,7 @@ public class Locust : MonoBehaviour
                 //find a new place to go
                 pickNewLandLocation();
             }
-        } else if (targetLandLocation != null && useBasicMove)
+        } else if (locustState == LocustState.flyingToTarget && useBasicMove)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetLandLocation.transform.position, Time.deltaTime * moveSpeed);
         } else
@@ -106,7 +113,9 @@ public class Locust : MonoBehaviour
             //Somehow, fly away? there's nothing left to munch?
             moveSpeed *= 5;
             targetExitLocation = gameManager.getRandomExitLocation();
+            locustState = LocustState.exiting;
         }
+        locustState = LocustState.flyingToTarget;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -114,6 +123,7 @@ public class Locust : MonoBehaviour
         //Debug.Log("Locust collided with [" + collision.gameObject.name + "]");
         if (collision.gameObject.tag == "PlayerHands")
         {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             handTouchedLocust();
         }
 
@@ -133,4 +143,12 @@ public class Locust : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+}
+
+public enum LocustState
+{
+    entering,
+    exiting,
+    eating,
+    flyingToTarget
 }
