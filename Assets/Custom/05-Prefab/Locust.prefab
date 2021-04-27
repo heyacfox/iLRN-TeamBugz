@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 201978187479703449}
   m_Layer: 10
   m_Name: Locust
-  m_TagString: Untagged
+  m_TagString: Locust
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -290,7 +290,7 @@ MonoBehaviour:
   GoalDistance: 0.5
   CohesionRadius: 5
   SeparationDistance: 1
-  MaxSpeed: 0.5
+  MaxSpeed: 2.5
 --- !u!135 &201978187479703449
 SphereCollider:
   m_ObjectHideFlags: 0

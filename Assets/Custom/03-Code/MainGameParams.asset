@@ -18,5 +18,5 @@ MonoBehaviour:
   moneyPerCropSaved: 0.5
   locustMunchAtLocationMaxTime: 10
   locustBasicMoveSpeed: 0.5
-  bugSpawnEveryXSeconds: 30
-  bugSpawnAmountPerWave: 10
+  bugSpawnEveryXSeconds: 4
+  bugSpawnAmountPerWave: 3

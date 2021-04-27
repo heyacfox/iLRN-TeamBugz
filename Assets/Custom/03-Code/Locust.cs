@@ -45,6 +45,11 @@ public class Locust : MonoBehaviour
         //Destroy(this.gameObject);
     }
 
+    public void getEaten()
+    {
+        Destroy(this.gameObject);
+    }
+
     public void caughtLocust()
     {
         AudioSource.PlayClipAtPoint(squishSound, this.transform.position);
