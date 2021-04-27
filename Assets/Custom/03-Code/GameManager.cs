@@ -171,8 +171,44 @@ public class GameManager : MonoBehaviour
 public enum GameState
 {
     MenuState,
+    Tutorial,
     PreSwarming,
     Swarming,
+    //(Dialogue tag: Go on, shoo, get out of here!)
     LocustsLeaving,
+    //(Dialogue: The character comments on how many crops are left)
     EndDay
+}
+
+public enum LevelState
+{
+    tutorialLevel,
+    pinchOnly,
+    smoke,
+    ducks1,
+    ducks2,
+    ducks3,
+    credits
+
+}
+
+//
+
+public enum TutorialStates
+{
+    //Initial State is actually a separate scene
+
+    //INTRO SCENE, HOUSE TABLE WITH A PHONE, EVERYTHING ELSE IS BLACK. 
+
+    //The phone will run until to press it with your hands. 
+
+    //Lights come up on the scene
+
+    spawnIn,
+    //After spawn in is complete, 
+    hitWithHand,
+    pinch,
+    phoneRing,
+
+
 }
