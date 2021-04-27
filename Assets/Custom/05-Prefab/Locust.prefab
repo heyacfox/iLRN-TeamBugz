@@ -156,7 +156,7 @@ MonoBehaviour:
   moveSpeed: 0
   squishSound: {fileID: 8300000, guid: d4da063f25743874dbd32acf1b3b828b, type: 3}
   munchLoop: {fileID: 8300000, guid: ccf85d01598cab54f86a229b8132dc26, type: 3}
-  boid: {fileID: 0}
+  boid: {fileID: 2594959192102294614}
 --- !u!54 &7225847104469954089
 Rigidbody:
   m_ObjectHideFlags: 0
