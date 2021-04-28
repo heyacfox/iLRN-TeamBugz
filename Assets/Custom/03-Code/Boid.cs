@@ -28,14 +28,20 @@ public class Boid : MonoBehaviour
     public float GoalDistance;
 
     /// <summary>
-    /// The radius of a sphere where any boid colliding is said to be a neighbor.
-    /// </summary>
-    public float CohesionRadius;
-
-    /// <summary>
     /// The layer mask containing colliders that are neighbors to this boid.
     /// </summary>
     public LayerMask NeighborLayer;
+
+    /// <summary>
+    /// The maximum angle from this boid's heading that it will consider a neighbor in view.
+    /// </summary>
+    [Range(0, 180)]
+    public float VisionAngle = 120f;
+
+    /// <summary>
+    /// The radius of a sphere where any boid colliding is said to be a neighbor.
+    /// </summary>
+    public float CohesionRadius;
 
     /// <summary>
     /// Boids will move away from each other if the distance from their centers is less than this number.
@@ -74,27 +80,31 @@ public class Boid : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         // For Testing
-        //rb.AddForce(new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-5f, 5f)), ForceMode.VelocityChange);
+        rb.AddForce(new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-5f, 5f)), ForceMode.VelocityChange);
     }
 
-    // Might want to change this into a coroutine if too costly to call every FixedUpdate
+    // Might want to change this into a coroutine or something if too costly to call every FixedUpdate
     private void FindNeighbors()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, CohesionRadius, ~NeighborLayer);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, CohesionRadius, NeighborLayer);
         neighbors.Clear();
         foreach (Collider c in colliders)
         {
-            Boid b = c.GetComponent<Boid>();
-            if (b != null && !b.ReachedGoal)
+            float dot = Vector3.Dot(rb.velocity.normalized, (c.transform.position - transform.position).normalized);
+            if (Mathf.Cos(Mathf.Deg2Rad * VisionAngle) < dot)
             {
-                neighbors.Add(c.transform);
+                Boid b = c.GetComponent<Boid>();
+                if (b != null && !b.ReachedGoal)
+                {
+                    neighbors.Add(c.transform);
+                }
             }
         }
     }
 
     private void FindObstacles()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, AvoidanceRadius, ~ObstacleLayer);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, AvoidanceRadius, ObstacleLayer, QueryTriggerInteraction.Collide);
         obstacles.Clear();
         foreach (Collider c in colliders)
         {
@@ -171,6 +181,7 @@ public class Boid : MonoBehaviour
     private void FixedUpdate()
     {
         FindNeighbors();
+        FindObstacles();
         CalculateVectors();
         Vector3 newVelocity =
             cohesion * CohesionSpeed +

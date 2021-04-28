@@ -13275,6 +13275,18 @@ PrefabInstance:
       propertyPath: CohesionRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2594959192102294614, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: AvoidanceRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594959192102294614, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: NeighborLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594959192102294614, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: ObstacleLayer.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 7225847104469954088, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
       propertyPath: m_RootOrder
       value: 0
