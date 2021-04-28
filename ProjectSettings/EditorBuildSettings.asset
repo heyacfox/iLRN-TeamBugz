@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Custom/04-Scenes/Nathan-Sandbox.unity
     guid: ddbc43ee77c21244a8eaaffbcf574394
+  - enabled: 1
+    path: Assets/Custom/04-Scenes/GameScenes/IntroScene.unity
+    guid: 9dc39ad6faf3a734c91130fe497b334c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bcb2e6fdcffdd834c86912bffc8659d2, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0d7b2c000b8540248a099d3e2324587e, type: 2}

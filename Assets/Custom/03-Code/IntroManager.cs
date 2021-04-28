@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class IntroManager : MonoBehaviour
     public Light doorLight;
     public float doorLightMaxIntensity = 10f;
     public Light phoneLight;
-    IntroStates introState = IntroStates.recognizingHands;
+    public IntroStates introState = IntroStates.recognizingHands;
     public AudioClip NatalinaIntro2;
 
     float fadeLengthMax;
@@ -25,7 +26,7 @@ public class IntroManager : MonoBehaviour
         //run the stuff related to "this is a hand experience please use your hands"
         //AFTER HANDS ARE REGISTERED, go to wait for phone ring state
         fadeLengthMax = NatalinaIntro2.length;
-
+        handsRecognized();
 
         
     }
@@ -39,16 +40,22 @@ public class IntroManager : MonoBehaviour
     public void enterPhoneRingState()
     {
         introState = IntroStates.phoneRinging;
-        phoneAudioSourceCall.Play();
+        phoneAudioSourceRingtone.Play();
         phoneAudioSourceVibrate.Play();
     }
 
     public void enterPhoneAnswered()
     {
-        introState = IntroStates.phoneAnswered;
-        phoneAudioSourceCall.Stop();
-        phoneAudioSourceVibrate.Stop();
-        phoneAudioSourceCall.Play();
+        if (introState == IntroStates.phoneRinging)
+        {
+            //stop the reminders to pick up the phone
+            CancelInvoke();
+            introState = IntroStates.phoneAnswered;
+            phoneAudioSourceRingtone.Stop();
+            phoneAudioSourceVibrate.Stop();
+            phoneAudioSourceCall.Play();
+            Invoke("phoneCallEnded", phoneAudioSourceCall.clip.length);
+        }
     }
 
     public void phoneCallEnded()
@@ -60,11 +67,7 @@ public class IntroManager : MonoBehaviour
 
     public void Update()
     {
-        if (introState == IntroStates.phoneAnswered 
-            && !phoneAudioSourceCall.isPlaying)
-        {
-            phoneCallEnded();
-        } else if (introState == IntroStates.doorLight)
+        if (introState == IntroStates.doorLight)
         {
             fadeLengthCurrent += Time.deltaTime;
             float fadePercent = fadeLengthCurrent / fadeLengthMax;
@@ -89,7 +92,16 @@ public class IntroManager : MonoBehaviour
 
     public void doorOpened()
     {
+        CancelInvoke();
         introState = IntroStates.doorOpened;
+        OVRScreenFade screenFade = FindObjectOfType<OVRScreenFade>();
+        screenFade.FadeOut();
+        Invoke("initiateSceneTransition", screenFade.fadeTime);
+    }
+
+    public void initiateSceneTransition()
+    {
+        SceneManager.LoadScene("Nathan-Sandbox");
     }
 
     
