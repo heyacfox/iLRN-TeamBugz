@@ -87,7 +87,10 @@ public class Locust : MonoBehaviour
         }
         else if (locustState == LocustState.eating)
         {
-            occupiedLocustLandLocation.munchTimeLeft -= Time.deltaTime;
+            if (gameManager.levelState != LevelState.tutorialLevel)
+            {
+                occupiedLocustLandLocation.munchTimeLeft -= Time.deltaTime;
+            }
             audioSource.volume = 1f;
             if (occupiedLocustLandLocation.munchTimeLeft <= 0)
             {

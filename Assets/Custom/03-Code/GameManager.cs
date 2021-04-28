@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     bool dayComplete;
     //For now start it on swarming
     public GameState gameState = GameState.Swarming;
+    public LevelState levelState = LevelState.tutorialLevel;
+    public TutorialStates tutorialState = TutorialStates.spawnIn;
 
     [Header("Links")]
     public TMP_Text moneyIndicatorText;
@@ -24,6 +26,14 @@ public class GameManager : MonoBehaviour
     public GameObject locustPrefab;
 
     public CropManager cropManager;
+
+    [Header("Tutorial Links")]
+    public AudioSource playerAudioSource;
+    public AudioClip tutorialHandShoo;
+    public AudioClip tutorialPick;
+    public List<AudioClip> listOfPickingSounds;
+    public float pickSoundPlayPercentChance = 0.2f;
+
 
 
     private void Awake()
@@ -161,6 +171,9 @@ public class GameManager : MonoBehaviour
             winText.text = "You Win!";
         }
     }
+
+    //Code related to tutorial States
+
 }
 
 //Menu state: Before the world has been entered.
