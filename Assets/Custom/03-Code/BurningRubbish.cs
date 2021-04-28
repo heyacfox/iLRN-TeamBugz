@@ -11,6 +11,7 @@ public class BurningRubbish : MonoBehaviour
     public bool rubbishBurning;
     public ParticleSystem rubbishParticles;
     public Transform rubbishDisplay;
+    public GameObject avoidanceCollider;
 
     public void rubbishSelected()
     {
@@ -18,6 +19,7 @@ public class BurningRubbish : MonoBehaviour
         {
             rubbishBurning = true;
             rubbishParticles.gameObject.SetActive(true);
+            avoidanceCollider.SetActive(true);
         }
     }
 
@@ -30,6 +32,7 @@ public class BurningRubbish : MonoBehaviour
             {
                 rubbishStock = 0;
                 rubbishParticles.gameObject.SetActive(false);
+                avoidanceCollider.SetActive(false);
                 rubbishBurning = false;
             }
         } else

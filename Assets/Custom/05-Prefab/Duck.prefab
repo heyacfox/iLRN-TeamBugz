@@ -163,15 +163,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8222c169d6a3b1f4cb1ffa8992f90646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CohesionWeight: 1
-  SeparationWeight: 1
-  AlignmentWeight: 1
-  GoalWeight: 1
-  Goal: {fileID: 0}
+  CohesionSpeed: 0
+  SeparationSpeed: 0
+  AlignmentSpeed: 0
+  AvoidanceSpeed: 0
   GoalSpeed: 5
+  Goal: {fileID: 0}
   GoalDistance: 0.1
+  NeighborLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  VisionAngle: 120
   CohesionRadius: 5
   SeparationDistance: 1
+  AvoidanceRadius: 0
+  ObstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
   MaxSpeed: 5
 --- !u!114 &129686658206046641
 MonoBehaviour:
