@@ -234,7 +234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &22955877
 Transform:
   m_ObjectHideFlags: 0
@@ -531,6 +531,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 19}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &87287475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 87287476}
+  m_Layer: 0
+  m_Name: TempLocation1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &87287476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87287475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.71, y: 8.27, z: -10.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1419005153}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &113172789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1254,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 482130, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
   m_PrefabInstance: {fileID: 444521428}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &444521431 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3138215499603636623, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+  m_PrefabInstance: {fileID: 444521428}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &446610470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,7 +1444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duckPurchasePrice: {fileID: 1416681083}
-  purchasePrice: 0
+  purchasePrice: 0.25
   duckPrefab: {fileID: 129686658206046644, guid: e0614eabaf950a946a5f3f1e8f9f89e4, type: 3}
   duckSpawnLocation: {fileID: 409546731}
 --- !u!1 &699154743
@@ -1569,6 +1604,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCrops: []
+  onCropDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1137208707}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: cropEatenSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &710765452
 Transform:
   m_ObjectHideFlags: 0
@@ -6658,6 +6708,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6088372197411932108, guid: fd0247375f9cd8d4e92d20acbce7370c, type: 3}
   m_PrefabInstance: {fileID: 743304897}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &755275620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 755275621}
+  m_Layer: 0
+  m_Name: TempLocation1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &755275621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755275620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.9, y: 8.27, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1419005153}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &819069893
 GameObject:
   m_ObjectHideFlags: 0
@@ -6710,6 +6790,18 @@ MonoBehaviour:
       - m_Target: {fileID: 690154020}
         m_TargetAssemblyTypeName: DuckPurchase, Assembly-CSharp
         m_MethodName: tryBuyDuck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1137208707}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: boughtDuckSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12250,14 +12342,39 @@ MonoBehaviour:
   timeLeftInDay: 0
   bugSpawnTimer: 0
   gameState: 3
+  levelState: 1
+  tutorialState: 0
   moneyIndicatorText: {fileID: 218724469}
   winText: {fileID: 1981800697}
   globalParams: {fileID: 11400000, guid: 487e78ec58daf9d46af86dbe3d4f8c7a, type: 2}
   BugSpawnLocations: []
   exitLocationsParent: {fileID: 574548945}
+  temporaryLocationsParent: {fileID: 1419005153}
   bugLocationsParent: {fileID: 157504445}
   locustPrefab: {fileID: 7225847104469954094, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
   cropManager: {fileID: 0}
+  playerAudioSource: {fileID: 444521431}
+  tutorialHandShoo: {fileID: 8300000, guid: 703f5c071e42857459a9504f2a6dc743, type: 3}
+  tutorialPick1: {fileID: 8300000, guid: f6a82502a7be0df4c894c389d2762594, type: 3}
+  tutorialPick2: {fileID: 8300000, guid: 24e20e0aeaf594b489659c3d7b5c47f0, type: 3}
+  tutorialBugsComing: {fileID: 8300000, guid: 4cbab103ddbdc66408cc7cf6e7e8955e, type: 3}
+  listOfPickingSounds:
+  - {fileID: 8300000, guid: 7bfbb8d7d9b7253449414400cb1fbace, type: 3}
+  - {fileID: 8300000, guid: 03d22a02f74566444b869ee53412505a, type: 3}
+  - {fileID: 8300000, guid: 793f4d470b50a0c4a83cf198f276e948, type: 3}
+  - {fileID: 8300000, guid: 18355950175f75d4891dc0bb318728dc, type: 3}
+  listOfCropDestroyedSounds:
+  - {fileID: 8300000, guid: 2a4bc18f8078aec49977e944227c2f4f, type: 3}
+  - {fileID: 8300000, guid: 475697bf35b85ad4e80e839070bbc276, type: 3}
+  - {fileID: 8300000, guid: e4ca548f87d18644da136e7a61bf4b8f, type: 3}
+  listOfBurnSounds:
+  - {fileID: 8300000, guid: e3066930eb3db094c881778587fd4c50, type: 3}
+  - {fileID: 8300000, guid: bf8f6189a3f11324fad60581d9cc964f, type: 3}
+  - {fileID: 8300000, guid: 37ae7cf5bd98b1844ada44e66ee4722a, type: 3}
+  listOfNewDuckSounds:
+  - {fileID: 8300000, guid: f567b1b488109e44693b9ecbc2c7868c, type: 3}
+  - {fileID: 8300000, guid: 16f242259faf09748ae58543566e4def, type: 3}
+  pickSoundPlayPercentChance: 0.5
 --- !u!1 &1141314245
 GameObject:
   m_ObjectHideFlags: 0
@@ -17652,6 +17769,39 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.869}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1419005152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419005153}
+  m_Layer: 0
+  m_Name: TemporaryDestinations
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1419005153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419005152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 755275621}
+  - {fileID: 1872629898}
+  - {fileID: 87287476}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1433277131
 GameObject:
   m_ObjectHideFlags: 0
@@ -18018,6 +18168,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectionMeshRenderer: {fileID: 1988034250}
+--- !u!1 &1546000984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1546000985}
+  m_Layer: 0
+  m_Name: DuckPatrolPoint
+  m_TagString: DuckPatrolPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1546000985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546000984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.196, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1546214309
 GameObject:
   m_ObjectHideFlags: 0
@@ -18495,8 +18675,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1137208707}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: usedRubbishSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _startStopButton: {fileID: 1480108436}
   _selectionCylinder: {fileID: 705120108}
+--- !u!1 &1872629897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1872629898}
+  m_Layer: 0
+  m_Name: TempLocation1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1872629898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872629897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.48, y: 8.27, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1419005153}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1928237125
 GameObject:
   m_ObjectHideFlags: 0
@@ -18620,8 +18842,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.3
+  m_fontSizeBase: 0.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19015,7 +19237,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097392597}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -19125,6 +19347,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 444521429}
     m_Modifications:
+    - target: {fileID: 1870938896605422, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
+      propertyPath: m_TagString
+      value: PlayerHands
+      objectReference: {fileID: 0}
     - target: {fileID: 4453513310108136, guid: 835e735ca71bf78459fb2cababd74112, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -19255,6 +19481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Duck
       objectReference: {fileID: 0}
+    - target: {fileID: 129686658206046644, guid: e0614eabaf950a946a5f3f1e8f9f89e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0614eabaf950a946a5f3f1e8f9f89e4, type: 3}
 --- !u!1001 &6088372197759411785
@@ -19331,7 +19561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7225847104469954088, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.719
+      value: 0.237
       objectReference: {fileID: 0}
     - target: {fileID: 7225847104469954088, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19347,15 +19577,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7225847104469954088, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7225847104469954088, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7225847104469954088, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7225847104469954088, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19372,6 +19602,62 @@ PrefabInstance:
     - target: {fileID: 7225847104469954094, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
       propertyPath: m_Name
       value: Locust
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustPicked.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustHitWithHand.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustPicked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustPicked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1137208707}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustHitWithHand.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustPicked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustPicked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: tutorialBugPicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustHitWithHand.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1137208707}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustHitWithHand.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustHitWithHand.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: tutorialBugShooed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustPicked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustHitWithHand.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustPicked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7225847104469954095, guid: eb4aefdfb10c2244981af06feb665326, type: 3}
+      propertyPath: onLocustHitWithHand.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb4aefdfb10c2244981af06feb665326, type: 3}

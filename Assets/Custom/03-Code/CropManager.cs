@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CropManager : MonoBehaviour
 {
     public List<Crop> allCrops;
+    public UnityEvent onCropDestroyed;
+
 
     public void Awake()
     {
@@ -44,5 +47,7 @@ public class CropManager : MonoBehaviour
     {
         //if you run out of crops...game over? Still play? What happens here?
         allCrops.Remove(crop);
+        if (onCropDestroyed.GetPersistentEventCount() > 0) onCropDestroyed.Invoke();
+        
     }
 }

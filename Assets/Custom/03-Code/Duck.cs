@@ -6,14 +6,14 @@ public class Duck : MonoBehaviour
 {
     DuckStates duckState;
     Boid attachedBoid;
-    Vector3 patrolOrigin;
+    Transform patrolOrigin;
     public float eatingTime = 2f;
     public Collider triggerCollider;
 
     // Start is called before the first frame update
     void Start()
     {
-        patrolOrigin = this.transform.position;
+        patrolOrigin = GameObject.FindGameObjectWithTag("DuckPatrolPoint").transform;
         attachedBoid = GetComponent<Boid>();
         duckState = DuckStates.waiting;
     }
@@ -21,6 +21,18 @@ public class Duck : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (duckState == DuckStates.waiting)
+        {
+            if (other.gameObject.tag == "Locust")
+            {
+                attachedBoid.Goal = other.transform;
+                duckState = DuckStates.chasing;
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (duckState == DuckStates.returning)
         {
             if (other.gameObject.tag == "Locust")
             {
@@ -38,16 +50,34 @@ public class Duck : MonoBehaviour
             {
                 collision.gameObject.GetComponent<Locust>().getEaten();
                 duckState = DuckStates.eating;
-                Invoke("bugEaten", eatingTime);
+                Invoke("endEating", eatingTime);
             }
         }
     }
 
-    private void bugEaten()
+    private void endEating()
     {
-        duckState = DuckStates.waiting;
-        //How do we check to see if there's any bugs in my collision area after I finish eating
+        attachedBoid.Goal = patrolOrigin;
+        duckState = DuckStates.returning;
     }
+
+    private void Update()
+    {
+        //Your bug got eaten, pick a new bug
+        if (duckState == DuckStates.chasing && attachedBoid.Goal == null)
+        {
+
+        }
+        if (duckState == DuckStates.returning)
+        {
+            if (Vector3.Distance(this.transform.position, attachedBoid.Goal.position) < 1f)
+            {
+                duckState = DuckStates.waiting;
+            }
+        }
+    }
+
+
 
     private void OnTriggerExit(Collider other)
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Locust : MonoBehaviour
 {
@@ -12,12 +13,17 @@ public class Locust : MonoBehaviour
     bool useBasicMove = true;
     public AudioClip squishSound;
     public AudioClip munchLoop;
+    public AudioClip flyLoop;
 
     AudioSource audioSource;
 
     LocustState locustState;
 
     public Boid boid;
+
+    public UnityEvent onLocustHitWithHand;
+    public UnityEvent onLocustPicked;
+    public UnityEvent onEatenByDuck;
 
     private void Awake()
     {
@@ -26,8 +32,22 @@ public class Locust : MonoBehaviour
         moveSpeed = gameManager.globalParams.locustBasicMoveSpeed;
         audioSource = GetComponent<AudioSource>();
         boid = GetComponent<Boid>();
-        audioSource.volume = 0f;
+        startFlySound();
 
+    }
+
+    private void startFlySound()
+    {
+        audioSource.clip = flyLoop;
+        audioSource.time = Random.Range(0, audioSource.clip.length);
+        audioSource.Play();
+    }
+
+    private void startEatingSound()
+    {
+        audioSource.clip = munchLoop;
+        audioSource.time = Random.Range(0, audioSource.clip.length);
+        audioSource.Play();
     }
 
     private void Start()
@@ -40,18 +60,25 @@ public class Locust : MonoBehaviour
     public void handTouchedLocust()
     {
         Debug.Log("touched locust");
-        boid.Goal = gameManager.getRandomExitLocation();
+        if (onLocustHitWithHand.GetPersistentEventCount() > 0) onLocustHitWithHand.Invoke();
+        //DON"T EXIT, but do get off the crop and go away for a little bit.
+        boid.Goal = gameManager.getRandomTemporaryDestination();
+        if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
+        startFlySound();
+        locustState = LocustState.flyingToTarget;
         //gameManager.caughtLocust();
         //Destroy(this.gameObject);
     }
 
     public void getEaten()
     {
+        if (onEatenByDuck.GetPersistentEventCount() > 0) onEatenByDuck.Invoke();
         Destroy(this.gameObject);
     }
 
     public void caughtLocust()
     {
+        if (onLocustPicked.GetPersistentEventCount() > 0) onLocustPicked.Invoke();
         AudioSource.PlayClipAtPoint(squishSound, this.transform.position);
         if (occupiedLocustLandLocation !=null) occupiedLocustLandLocation.isOccupied = false;
 
@@ -72,6 +99,7 @@ public class Locust : MonoBehaviour
         transform.rotation = landLocation.transform.rotation;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         locustState = LocustState.eating;
+        startEatingSound();
 
 
 
@@ -79,10 +107,13 @@ public class Locust : MonoBehaviour
 
     public void Update()
     {
-        audioSource.volume = 0f;
-        
         if (locustState == LocustState.exiting)
         {
+            //If you are eating when everyone else is leaving, stop being a boid.
+            if (occupiedLocustLandLocation != null)
+            {
+                gameObject.layer = LayerMask.NameToLayer("Default");
+            }
             
         }
         else if (locustState == LocustState.eating)
@@ -91,7 +122,6 @@ public class Locust : MonoBehaviour
             {
                 occupiedLocustLandLocation.munchTimeLeft -= Time.deltaTime;
             }
-            audioSource.volume = 1f;
             if (occupiedLocustLandLocation.munchTimeLeft <= 0)
             {
                 
@@ -105,9 +135,12 @@ public class Locust : MonoBehaviour
                 //find a new place to go
                 pickNewLandLocation();
             }
-        } else if (locustState == LocustState.flyingToTarget)
+        } else if (locustState == LocustState.flyingToTarget && gameManager.gameState != GameState.LocustsLeaving)
         {
-            
+            if (Vector3.Distance(boid.Goal.position, transform.position) < 3)
+            {
+                pickNewLandLocation();
+            }
         } else
         {
             pickNewLandLocation();

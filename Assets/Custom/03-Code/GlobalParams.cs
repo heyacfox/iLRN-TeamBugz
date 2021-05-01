@@ -5,8 +5,11 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GlobalParams : ScriptableObject
 {
+    LevelConfig currentLevelConfig;
+    public LevelConfig startingLevelConfig;
+
     [Header("Day Variables")]
-    public float timePerDay = 60f;
+    public float preSwarmTime = 10f;
 
     [Header("Money Variables")]
     public float moneyPerLocust = 0.01f;
@@ -20,7 +23,37 @@ public class GlobalParams : ScriptableObject
     public float locustMunchAtLocationMaxTime = 10f;
     public float locustBasicMoveSpeed = 5f;
 
-    [Header("Spawning Variables")]
-    public float bugSpawnEveryXSeconds = 5f;
-    public float bugSpawnAmountPerWave = 3f;
+
+    public float getCurrentLevelSpawnInterval()
+    {
+        return currentLevelConfig.spawnWaveEveryXSeconds;
+    }
+
+    public float getCurrentLevelSpawnPerWave()
+    {
+        return currentLevelConfig.bugsPerWave;
+    }
+
+    public float getCurrentLevelTotalWaves()
+    {
+        return currentLevelConfig.wavesToSpawn;
+    }
+
+    public float getCurrentLevelTotalTime()
+    {
+        return currentLevelConfig.totalLevelTimeLengthSeconds;
+    }
+
+    public void getNextLevel()
+    {
+        if (currentLevelConfig.nextLevel != null)
+        {
+            currentLevelConfig = currentLevelConfig.nextLevel;
+        }
+    }
+    
+    public void useStartingLevel()
+    {
+        currentLevelConfig = startingLevelConfig;
+    }
 }

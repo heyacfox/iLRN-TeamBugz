@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16442ef1477509d4fbe63f9f89c0854c, type: 3}
   m_Name: MainGameParams
   m_EditorClassIdentifier: 
-  timePerDay: 60
+  startingLevelConfig: {fileID: 11400000, guid: 79db173424926aa49aad18d8a5372bcd, type: 2}
+  preSwarmTime: 10
   moneyPerLocust: 0.05
   moneyToWin: 1.75
   moneyPerCropSaved: 0.5
   locustMunchAtLocationMaxTime: 10
   locustBasicMoveSpeed: 0.5
-  bugSpawnEveryXSeconds: 4
-  bugSpawnAmountPerWave: 3

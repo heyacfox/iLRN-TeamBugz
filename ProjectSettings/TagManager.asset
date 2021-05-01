@@ -8,6 +8,7 @@ TagManager:
   - LandLocation
   - LocustExit
   - Locust
+  - DuckPatrolPoint
   layers:
   - Default
   - TransparentFX

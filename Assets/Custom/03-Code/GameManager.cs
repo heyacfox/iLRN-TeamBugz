@@ -22,16 +22,23 @@ public class GameManager : MonoBehaviour
     public List<Transform> BugSpawnLocations;
     List<Transform> exitLocations;
     public Transform exitLocationsParent;
+    public Transform temporaryLocationsParent;
+    List<Transform> tempLocations;
     public Transform bugLocationsParent;
     public GameObject locustPrefab;
 
     public CropManager cropManager;
 
-    [Header("Tutorial Links")]
+    [Header("AudioLinks")]
     public AudioSource playerAudioSource;
     public AudioClip tutorialHandShoo;
-    public AudioClip tutorialPick;
+    public AudioClip tutorialPick1;
+    public AudioClip tutorialPick2;
+    public AudioClip tutorialBugsComing;
     public List<AudioClip> listOfPickingSounds;
+    public List<AudioClip> listOfCropDestroyedSounds;
+    public List<AudioClip> listOfBurnSounds;
+    public List<AudioClip> listOfNewDuckSounds;
     public float pickSoundPlayPercentChance = 0.2f;
 
 
@@ -39,9 +46,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         cropManager = FindObjectOfType<CropManager>();
-        timeLeftInDay = globalParams.timePerDay;
-        bugSpawnTimer = globalParams.bugSpawnEveryXSeconds;
-        winText.text = "Defend";
+        timeLeftInDay = globalParams.getCurrentLevelTotalTime();
+        bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
+        
         BugSpawnLocations = new List<Transform>();
         foreach (Transform c in bugLocationsParent)
         {
@@ -52,24 +59,152 @@ public class GameManager : MonoBehaviour
         {
             exitLocations.Add(c);
         }
+        tempLocations = new List<Transform>();
+        foreach (Transform c in temporaryLocationsParent)
+        {
+            tempLocations.Add(c);
+        }
         updateMoneyDisplay();
+        if (levelState == LevelState.tutorialLevel && tutorialState == TutorialStates.spawnIn)
+        {
+            playerAudioSource.Stop();
+            playerAudioSource.clip = tutorialHandShoo;
+            playerAudioSource.Play();
+            tutorialState = TutorialStates.hitWithHand;
+        }
     }
 
     public Transform getRandomExitLocation()
     {
         return exitLocations[Random.Range(0, exitLocations.Count)];
     }
+    public Transform getRandomTemporaryDestination()
+    {
+        return tempLocations[Random.Range(0, tempLocations.Count)];
+    }
+
+    public void cropEatenSound()
+    {
+        playerAudioSource.clip = listOfCropDestroyedSounds[Random.Range(0, listOfCropDestroyedSounds.Count)];
+        playerAudioSource.Play();
+    }
+
+    public void boughtDuckSound()
+    {
+        playerAudioSource.clip = listOfNewDuckSounds[Random.Range(0, listOfNewDuckSounds.Count)];
+        playerAudioSource.Play();
+    }
+
+    public void usedRubbishSound()
+    {
+        playerAudioSource.clip = listOfBurnSounds[Random.Range(0, listOfBurnSounds.Count)];
+        playerAudioSource.Play();
+    }
 
 
     private void Update()
     {
+        winText.text = $"GAMESTATE: {gameState.ToString()}| \nLEVELSTATE: {levelState.ToString()}| \nTUTSTATE: {tutorialState.ToString()}";
         if (gameState == GameState.MenuState)
         {
             //Do nothing right now? waiting for the user to do something?
-        } else if (gameState == GameState.PreSwarming)
+        } else if (levelState == LevelState.tutorialLevel)
         {
 
-        } else if (gameState == GameState.Swarming)
+        } else
+        {
+            insideRealLevel();
+        }
+        
+    }
+
+    public void tutorialBugShooed()
+    {
+        if (levelState == LevelState.tutorialLevel && tutorialState == TutorialStates.hitWithHand)
+        {
+            playerAudioSource.Stop();
+            playerAudioSource.clip = tutorialPick1;
+            playerAudioSource.Play();
+            tutorialState = TutorialStates.pinch;
+        }
+    }
+
+    public void tutorialBugPicked()
+    {
+        if (levelState == LevelState.tutorialLevel &&tutorialState == TutorialStates.pinch)
+        {
+            playerAudioSource.Stop();
+            playerAudioSource.clip = tutorialPick2;
+            playerAudioSource.Play();
+            tutorialState = TutorialStates.phoneRing;
+            Invoke("tutorialPhoneInfoComplete", 5f);
+        }
+        
+    }
+
+    public void tutorialPhoneInfoComplete()
+    {
+        if (levelState == LevelState.tutorialLevel && tutorialState == TutorialStates.phoneRing)
+        {
+            playerAudioSource.Stop();
+            playerAudioSource.clip = tutorialPick2;
+            playerAudioSource.Play();
+            /*
+            if (gameState == GameState.Tutorial)
+            {
+                levelState = LevelState.pinchOnly;
+            }
+            */
+            preSwarmBegins();
+        }
+
+    }
+
+    public void swarmBegins()
+    {
+        gameState = GameState.Swarming;
+        Invoke("swarmEnds", globalParams.getCurrentLevelTotalTime());
+    }
+
+    public void swarmEnds()
+    {
+        endDay();
+        
+        //(need to go to the next level)
+        
+    }
+
+    public void preSwarmBegins()
+    {
+        //I hate it I hate it I hate it I hate it I hate it but technically it will work to get
+        //the next enum of the level
+        gameState = GameState.PreSwarming;
+        levelState++;
+        if (levelState == LevelState.credits)
+        {
+            //Do something else.
+        } else
+        {
+            if (levelState != LevelState.pinchOnly)
+            {
+                //starter level is tutorial, which doesn't actuall have a config.
+                globalParams.getNextLevel();
+            } else
+            {
+                globalParams.useStartingLevel();
+            }
+            
+            timeLeftInDay = globalParams.getCurrentLevelTotalTime();
+            bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
+            gameState = GameState.PreSwarming;
+            Invoke("swarmBegins", globalParams.preSwarmTime);
+        }
+        
+    }
+
+    private void insideRealLevel()
+    {
+        if (gameState == GameState.Swarming)
         {
             timeLeftInDay -= Time.deltaTime;
             if (timeLeftInDay <= 0f && !dayComplete)
@@ -84,7 +219,7 @@ public class GameManager : MonoBehaviour
                 if (cropManager.getRandomLandLocation() != null)
                 {
                     spawnBugs();
-                    bugSpawnTimer = globalParams.bugSpawnEveryXSeconds;
+                    bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
                 }
                 else
                 {
@@ -92,7 +227,8 @@ public class GameManager : MonoBehaviour
                 }
 
             }
-        } else if (gameState == GameState.LocustsLeaving)
+        }
+        else if (gameState == GameState.LocustsLeaving)
         {
             //watch until there are no bugs left?
             if (FindObjectsOfType<Locust>().Length <= 0)
@@ -103,25 +239,28 @@ public class GameManager : MonoBehaviour
                 updateMoneyDisplay();
                 if (currentMoney >= globalParams.moneyToWin)
                 {
-                    
+
                     winText.text = "You win!";
-                } else
+                }
+                else
                 {
                     winText.text = "You lose.";
                 }
 
                 gameState = GameState.EndDay;
             }
-        } else if (gameState == GameState.EndDay)
+        }
+        else if (gameState == GameState.EndDay)
         {
+            preSwarmBegins();
             //it's the end of the game. Allow them to restart the experience? Show them their result?
         }
 
-        
+
 
         if (dayComplete)
         {
-            
+
         }
     }
 
@@ -144,7 +283,7 @@ public class GameManager : MonoBehaviour
     private void spawnBugs()
     {
         //multiple bugs CAN spawn at the exact same location and I don't care about that.
-        for (int i = 0; i < globalParams.bugSpawnAmountPerWave; i++)
+        for (int i = 0; i < globalParams.getCurrentLevelSpawnPerWave(); i++)
         {
             Instantiate(locustPrefab, 
                 BugSpawnLocations[Random.Range(0, BugSpawnLocations.Count)].position, 
@@ -161,6 +300,15 @@ public class GameManager : MonoBehaviour
 
     public void caughtLocust()
     {
+        if (levelState != LevelState.tutorialLevel)
+        {
+            float randomCatchAudioChance = Random.Range(0, 1f);
+            if (randomCatchAudioChance < pickSoundPlayPercentChance)
+            {
+                playerAudioSource.clip = listOfPickingSounds[Random.Range(0, listOfPickingSounds.Count)];
+                playerAudioSource.Play();
+            }
+        }
         updateMoney(globalParams.moneyPerLocust);
     }
 
@@ -170,7 +318,10 @@ public class GameManager : MonoBehaviour
         {
             winText.text = "You Win!";
         }
+        
     }
+    
+    
 
     //Code related to tutorial States
 
