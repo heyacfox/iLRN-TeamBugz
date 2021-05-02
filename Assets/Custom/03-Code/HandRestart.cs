@@ -7,6 +7,8 @@ public class HandRestart : MonoBehaviour
 {
     public bool m_isLeftPinkieStaying;
     OVRHand[] m_hands;
+    public float totalLengthRequired = 2f;
+    public float currentTime;
     private void Start()
     {
         
@@ -24,10 +26,20 @@ public class HandRestart : MonoBehaviour
         if (m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Pinky))
         {
             m_isLeftPinkieStaying = true;
-            loadIntroScene();
         } else
         {
             m_isLeftPinkieStaying = false;
+        }
+        if (m_isLeftPinkieStaying)
+        {
+            currentTime += Time.deltaTime;
+            if (currentTime > totalLengthRequired)
+            {
+                loadIntroScene();
+            }
+        } else
+        {
+            currentTime = 0;
         }
     }
 
