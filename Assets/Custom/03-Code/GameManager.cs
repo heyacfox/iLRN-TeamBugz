@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
             tutorialState = TutorialStates.hitWithHand;
         } else
         {
+            globalParams.getNextLevel();
             timeLeftInDay = globalParams.getCurrentLevelTotalTime();
             bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
         }
@@ -276,7 +277,7 @@ public class GameManager : MonoBehaviour
             if (FindObjectsOfType<Locust>().Length <= 0)
             {
                 //all the bugs have left. Show the player how much money they have from crops. 
-                currentMoney += globalParams.moneyPerCropSaved * cropManager.cropsCurrent();
+                //currentMoney += globalParams.moneyPerCropSaved * cropManager.cropsCurrent();
                 //Run some sort of check.
                 updateMoneyDisplay();
                 if (currentMoney >= globalParams.moneyToWin)

@@ -12372,8 +12372,8 @@ MonoBehaviour:
   currentMoney: 0
   timeLeftInDay: 0
   bugSpawnTimer: 0
-  gameState: 3
-  levelState: 1
+  gameState: 1
+  levelState: 0
   tutorialState: 0
   moneyIndicatorText: {fileID: 218724469}
   winText: {fileID: 1981800697}
@@ -18816,6 +18816,10 @@ PrefabInstance:
     - target: {fileID: 129686658206046644, guid: e0614eabaf950a946a5f3f1e8f9f89e4, type: 3}
       propertyPath: m_Name
       value: Duck (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 129686658206046644, guid: e0614eabaf950a946a5f3f1e8f9f89e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0614eabaf950a946a5f3f1e8f9f89e4, type: 3}
