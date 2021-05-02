@@ -192,6 +192,10 @@ public class Boid : MonoBehaviour
         newVelocity = Vector3.ClampMagnitude(newVelocity, MaxSpeed);
 
         rb.AddForce(newVelocity - rb.velocity, ForceMode.VelocityChange);
+        if (Goal != null)
+        {
+            transform.LookAt(Goal);
+        }
     }
 
     private void OnDrawGizmosSelected()
