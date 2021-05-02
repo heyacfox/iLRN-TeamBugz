@@ -151,6 +151,7 @@ public class Locust : MonoBehaviour
     {
         //If this returns absolutely nothing, what should I do?
         LocustLandLocation tempLocation = gameManager.cropManager.getRandomLandLocation();
+        
         if (tempLocation == null)
         {
             Debug.Log("No more locations left");
@@ -158,9 +159,11 @@ public class Locust : MonoBehaviour
             //moveSpeed *= 5;
             boid.Goal = gameManager.getRandomExitLocation();
             locustState = LocustState.exiting;
+            return;
         }
         boid.Goal = tempLocation.transform;
         locustState = LocustState.flyingToTarget;
+        transform.LookAt(tempLocation.transform);
     }
 
     private void OnCollisionEnter(Collision collision)

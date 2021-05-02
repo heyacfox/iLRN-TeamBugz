@@ -17,6 +17,15 @@ public class IntroManager : MonoBehaviour
     public IntroStates introState = IntroStates.recognizingHands;
     public AudioClip NatalinaIntro2;
 
+    public AudioClip doorReminder1;
+    public AudioClip doorReminder2;
+
+    private int phoneReminderIndex;
+       
+    public AudioClip phoneReminder1;
+    public AudioClip phoneReminder2;
+    public AudioClip phoneReminder3;
+
     float fadeLengthMax;
     float fadeLengthCurrent = 0f;
 
@@ -42,6 +51,30 @@ public class IntroManager : MonoBehaviour
         introState = IntroStates.phoneRinging;
         phoneAudioSourceRingtone.Play();
         phoneAudioSourceVibrate.Play();
+        InvokeRepeating("phoneReminderAudio", 30f, 15f);
+    }
+
+    private void phoneReminderAudio()
+    {
+        switch(phoneReminderIndex)
+        {
+            case 0:
+                characterAudioSource.clip = phoneReminder1;
+                break;
+            case 1:
+                characterAudioSource.clip = phoneReminder2;
+                break;
+            case 2:
+                characterAudioSource.clip = phoneReminder3;
+                break;
+
+        }
+        characterAudioSource.Play();
+        phoneReminderIndex++;
+        if (phoneReminderIndex > 2)
+        {
+            phoneReminderIndex = 0;
+        }
     }
 
     public void enterPhoneAnswered()
@@ -80,7 +113,9 @@ public class IntroManager : MonoBehaviour
             if (fadeLengthCurrent >= fadeLengthMax)
             {
                 introState = IntroStates.doorOpenReminders;
-                InvokeRepeating("doorOpenReminders", 10f, 20f);
+                characterAudioSource.clip = doorReminder1;
+                characterAudioSource.PlayDelayed(30f);
+                InvokeRepeating("doorOpenReminders", 60f, 15f);
             }
         }
     }
@@ -88,6 +123,8 @@ public class IntroManager : MonoBehaviour
     public void doorOpenReminders()
     {
         //some logic here to play audio clips looped through a list. 
+        characterAudioSource.clip = doorReminder2;
+        characterAudioSource.Play();
     }
 
     public void doorOpened()

@@ -41,13 +41,24 @@ public class GameManager : MonoBehaviour
     public List<AudioClip> listOfNewDuckSounds;
     public float pickSoundPlayPercentChance = 0.2f;
 
+    [Header("AudioLinksPreswarms")]
+    public AudioClip pinchOnlyClip;
+    public AudioClip smokeClip;
+    public AudioClip duck1Clip;
+    public AudioClip duck3Clip;
+    public AudioClip loseGameClip;
+    public AudioClip winLevel1Clip;
+    public AudioClip winLevel2Clip;
+    public AudioClip winLevel3Clip;
+    public AudioClip preSwarmOnCreditsClip;
+
 
 
     private void Awake()
     {
         cropManager = FindObjectOfType<CropManager>();
-        timeLeftInDay = globalParams.getCurrentLevelTotalTime();
-        bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
+
+        
         
         BugSpawnLocations = new List<Transform>();
         foreach (Transform c in bugLocationsParent)
@@ -71,6 +82,10 @@ public class GameManager : MonoBehaviour
             playerAudioSource.clip = tutorialHandShoo;
             playerAudioSource.Play();
             tutorialState = TutorialStates.hitWithHand;
+        } else
+        {
+            timeLeftInDay = globalParams.getCurrentLevelTotalTime();
+            bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
         }
     }
 
@@ -174,6 +189,31 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private void playCorrectPreswarmAudio()
+    {
+        if (levelState == LevelState.pinchOnly)
+        {
+            playerAudioSource.clip = pinchOnlyClip;
+        } else if (levelState == LevelState.smoke)
+        {
+            playerAudioSource.clip = smokeClip;
+        }
+        else if (levelState == LevelState.ducks1)
+        {
+            playerAudioSource.clip = duck1Clip;
+        }
+        else if (levelState == LevelState.ducks2)
+        {
+            playerAudioSource.clip = duck1Clip;
+        }
+        else if (levelState == LevelState.ducks3)
+        {
+            playerAudioSource.clip = duck3Clip;
+        }
+
+        playerAudioSource.Play();
+    }
+
     public void preSwarmBegins()
     {
         //I hate it I hate it I hate it I hate it I hate it but technically it will work to get
@@ -185,6 +225,8 @@ public class GameManager : MonoBehaviour
             //Do something else.
         } else
         {
+            playCorrectPreswarmAudio();
+
             if (levelState != LevelState.pinchOnly)
             {
                 //starter level is tutorial, which doesn't actuall have a config.

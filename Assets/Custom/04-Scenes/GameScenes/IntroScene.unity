@@ -259,7 +259,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ccf85d01598cab54f86a229b8132dc26, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 026e276874912ef4ca04f80de702b288, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -576,7 +576,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d4da063f25743874dbd32acf1b3b828b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3b8fc3aef7d8ae54fbc12cfbea8c307b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2083,8 +2083,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.078894, y: 5.7667074, z: 0.46652013}
-  m_Center: {x: -0.013204285, y: 2.3833544, z: -0.1406384}
+  m_Size: {x: 2.3407834, y: 13.04247, z: 1.3036898}
+  m_Center: {x: 0.32297164, y: 6.0212355, z: -0.17182939}
 --- !u!114 &1006522041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2245,7 +2245,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e4a0751c3a6b6af448c242e75a47822a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9560e98fe6518944e8c560fb3c80e7c1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3609,6 +3609,11 @@ MonoBehaviour:
   phoneLight: {fileID: 0}
   introState: 0
   NatalinaIntro2: {fileID: 8300000, guid: e779a84003804c04098e337c2aae7383, type: 3}
+  doorReminder1: {fileID: 8300000, guid: ea7f318e44820f647a41575e9b628dd9, type: 3}
+  doorReminder2: {fileID: 8300000, guid: 545da9a54eab32641992ef8127199a40, type: 3}
+  phoneReminder1: {fileID: 8300000, guid: 75257ebef49045742aab0636dd6253b9, type: 3}
+  phoneReminder2: {fileID: 8300000, guid: 8197a42da330ebb429e97f2d1ef4e75e, type: 3}
+  phoneReminder3: {fileID: 8300000, guid: 3761638071186ce45baa6280c2bd3e55, type: 3}
 --- !u!4 &2076195315
 Transform:
   m_ObjectHideFlags: 0

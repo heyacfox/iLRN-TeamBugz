@@ -26,6 +26,7 @@ public class Duck : MonoBehaviour
             {
                 attachedBoid.Goal = other.transform;
                 duckState = DuckStates.chasing;
+                
             }
         }
     }
@@ -50,6 +51,7 @@ public class Duck : MonoBehaviour
             {
                 collision.gameObject.GetComponent<Locust>().getEaten();
                 duckState = DuckStates.eating;
+                attachedBoid.enabled = false;
                 Invoke("endEating", eatingTime);
             }
         }
@@ -57,16 +59,25 @@ public class Duck : MonoBehaviour
 
     private void endEating()
     {
+        attachedBoid.enabled = true;
         attachedBoid.Goal = patrolOrigin;
         duckState = DuckStates.returning;
     }
 
     private void Update()
     {
+        if (duckState == DuckStates.eating || duckState == DuckStates.waiting)
+        {
+            transform.rotation = Quaternion.identity;
+        }
+        if (duckState == DuckStates.chasing)
+        {
+            transform.LookAt(attachedBoid.Goal);
+        }
         //Your bug got eaten, pick a new bug
         if (duckState == DuckStates.chasing && attachedBoid.Goal == null)
         {
-
+            
         }
         if (duckState == DuckStates.returning)
         {
