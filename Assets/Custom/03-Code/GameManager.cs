@@ -223,7 +223,7 @@ public class GameManager : MonoBehaviour
         levelState++;
         if (levelState == LevelState.credits)
         {
-            //Do something else.
+            checkWinState();
         } else
         {
             playCorrectPreswarmAudio();
@@ -280,15 +280,6 @@ public class GameManager : MonoBehaviour
                 //currentMoney += globalParams.moneyPerCropSaved * cropManager.cropsCurrent();
                 //Run some sort of check.
                 updateMoneyDisplay();
-                if (currentMoney >= globalParams.moneyToWin)
-                {
-
-                    winText.text = "You win!";
-                }
-                else
-                {
-                    winText.text = "You lose.";
-                }
 
                 gameState = GameState.EndDay;
             }
@@ -357,9 +348,23 @@ public class GameManager : MonoBehaviour
 
     public void checkWinState()
     {
-        if (currentMoney >= globalParams.moneyToWin)
+        if (cropManager.cropsCurrent() >= globalParams.goodWin)
         {
-            winText.text = "You Win!";
+            playerAudioSource.clip = winLevel3Clip;
+            playerAudioSource.Play();
+        } else if (cropManager.cropsCurrent() >= globalParams.mediumWin)
+        {
+            playerAudioSource.clip = winLevel2Clip;
+            playerAudioSource.Play();
+        } else if (cropManager.cropsCurrent() >= globalParams.basicWin)
+        {
+            playerAudioSource.clip = winLevel1Clip;
+            playerAudioSource.Play();
+        } else
+        {
+            playerAudioSource.clip = loseGameClip;
+            playerAudioSource.Play();
+            Debug.Log("YOU LOST");
         }
         
     }
