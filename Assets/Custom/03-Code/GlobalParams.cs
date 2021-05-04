@@ -13,6 +13,7 @@ public class GlobalParams : ScriptableObject
 
     [Header("Money Variables")]
     public float moneyPerLocust = 0.01f;
+    public float duckPurchaseCost = 0.5f;
 
     [Header("WinConditions")]
     public float basicWin = 1.0f;

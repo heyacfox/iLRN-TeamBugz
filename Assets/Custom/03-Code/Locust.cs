@@ -14,6 +14,8 @@ public class Locust : MonoBehaviour
     public AudioClip squishSound;
     public AudioClip munchLoop;
     public AudioClip flyLoop;
+    public AudioClip handHitSound;
+    public bool HandHitDelayed;
 
     AudioSource audioSource;
 
@@ -60,6 +62,12 @@ public class Locust : MonoBehaviour
     public void handTouchedLocust()
     {
         Debug.Log("touched locust");
+        if (!HandHitDelayed)
+        {
+            HandHitDelayed = true;
+            audioSource.PlayOneShot(handHitSound);
+            Invoke("removeHandHitAudioDelay", 1f);
+        }
         if (onLocustHitWithHand.GetPersistentEventCount() > 0) onLocustHitWithHand.Invoke();
         //DON"T EXIT, but do get off the crop and go away for a little bit.
         boid.Goal = gameManager.getRandomTemporaryDestination();
@@ -68,6 +76,11 @@ public class Locust : MonoBehaviour
         locustState = LocustState.flyingToTarget;
         //gameManager.caughtLocust();
         //Destroy(this.gameObject);
+    }
+
+    void removeHandHitAudioDelay()
+    {
+        HandHitDelayed = false;
     }
 
     public void getEaten()
