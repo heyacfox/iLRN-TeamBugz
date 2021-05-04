@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
 
     public CropManager cropManager;
 
+    public GameObject smokeParent;
+    public GameObject duckParent;
+
     [Header("AudioLinks")]
     public AudioSource playerAudioSource;
     public AudioClip tutorialHandShoo;
@@ -240,6 +243,15 @@ public class GameManager : MonoBehaviour
             timeLeftInDay = globalParams.getCurrentLevelTotalTime();
             bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
             gameState = GameState.PreSwarming;
+
+            if (levelState == LevelState.smoke)
+            {
+                smokeParent.SetActive(true);
+            } else if (levelState == LevelState.ducks1)
+            {
+                duckParent.SetActive(true);
+            }
+
             Invoke("swarmBegins", globalParams.preSwarmTime);
         }
         
@@ -329,7 +341,6 @@ public class GameManager : MonoBehaviour
     {
         currentMoney += moneyAmount;
         updateMoneyDisplay();
-        checkWinState();
     }
 
     public void caughtLocust()

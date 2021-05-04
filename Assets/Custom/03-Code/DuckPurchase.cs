@@ -30,6 +30,7 @@ public class DuckPurchase : MonoBehaviour
         {
             Instantiate(duckPrefab, duckSpawnLocation.position, duckSpawnLocation.rotation);
             gameManager.updateMoney(-purchasePrice);
+            gameManager.boughtDuckSound();
 
         }
         
