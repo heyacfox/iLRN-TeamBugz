@@ -12615,8 +12615,8 @@ MonoBehaviour:
   duck1Clip: {fileID: 8300000, guid: 7f59c94fb5915844b922a2048c5d2582, type: 3}
   duck3Clip: {fileID: 8300000, guid: 43d20dbd2f3c26d40ab6d1b0ffc8a6f3, type: 3}
   loseGameClip: {fileID: 8300000, guid: d42f25f88d498ff44a30558699580b3e, type: 3}
-  winLevel1Clip: {fileID: 0}
-  winLevel2Clip: {fileID: 0}
+  winLevel1Clip: {fileID: 8300000, guid: f383fcc579e28e748b68db7745b092c8, type: 3}
+  winLevel2Clip: {fileID: 8300000, guid: a29cc327315c6f040b7afb8c6e193f3f, type: 3}
   winLevel3Clip: {fileID: 8300000, guid: 0029a6972735a9a47985210aac0f1544, type: 3}
   preSwarmOnCreditsClip: {fileID: 8300000, guid: 319b7ed9df0e619439109fe560c8f57e, type: 3}
 --- !u!1 &1141314245

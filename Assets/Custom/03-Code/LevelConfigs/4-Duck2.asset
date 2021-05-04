@@ -15,5 +15,5 @@ MonoBehaviour:
   wavesToSpawn: 6
   bugsPerWave: 6
   spawnWaveEveryXSeconds: 7
-  totalLevelTimeLengthSeconds: 20
+  totalLevelTimeLengthSeconds: 60
   nextLevel: {fileID: 11400000, guid: a7de67c990fd7e045af55c6298f0a44e, type: 2}

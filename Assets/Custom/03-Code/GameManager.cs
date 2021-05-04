@@ -156,7 +156,7 @@ public class GameManager : MonoBehaviour
             playerAudioSource.clip = tutorialPick2;
             playerAudioSource.Play();
             tutorialState = TutorialStates.phoneRing;
-            Invoke("tutorialPhoneInfoComplete", 5f);
+            Invoke("tutorialPhoneInfoComplete", tutorialPick2.length);
         }
         
     }
@@ -241,7 +241,7 @@ public class GameManager : MonoBehaviour
             }
             
             timeLeftInDay = globalParams.getCurrentLevelTotalTime();
-            bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
+            bugSpawnTimer = 0.0f;
             gameState = GameState.PreSwarming;
 
             if (levelState == LevelState.smoke)
