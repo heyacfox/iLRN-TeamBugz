@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a10c9f8683ae4145b49c5ac41046892, type: 3}
   m_Name: 5-Duck3
   m_EditorClassIdentifier: 
-  wavesToSpawn: 8
-  bugsPerWave: 6
+  wavesToSpawn: 5
+  bugsPerWave: 10
   spawnWaveEveryXSeconds: 6
   totalLevelTimeLengthSeconds: 20
   nextLevel: {fileID: 0}
