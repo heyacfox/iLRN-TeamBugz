@@ -1420,10 +1420,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factList:
-  - Fact 1
-  - Fact 2
-  - Fact 3
-  - Fact 4
+  - In recent years, locust swarms have caused significant agricultural losses in
+    many Asian and African counties
+  - The Food and Agriculture Organization of the United Nations has adopted pesticides,
+    real-time monitoring, GPS-based guidance system and drone technology to tackle
+    the issue of locust swarms
+  - The "Chinese Duck Army" of more than 100,000 ducks is an example of controlling
+    locust swarms in a natural way
+  - One duck is able to eat more than 200 locusts per day
+  - Locusts are excellent sources of protein if eaten as food
+  - Locusts are considered a delicacy and eaten in many African, Middle Eastern,
+    and Asian countries
   lastFact: -1
   currentFact: -1
   factTextObject: {fileID: 958990997}
