@@ -15,6 +15,7 @@ public class IntroManager : MonoBehaviour
     public float doorLightMaxIntensity = 10f;
     public Light phoneLight;
     public IntroStates introState = IntroStates.recognizingHands;
+    public AudioClip NatalinaIntro1;
     public AudioClip NatalinaIntro2;
 
     public AudioClip doorReminder1;
@@ -35,7 +36,7 @@ public class IntroManager : MonoBehaviour
         //run the stuff related to "this is a hand experience please use your hands"
         //AFTER HANDS ARE REGISTERED, go to wait for phone ring state
         fadeLengthMax = NatalinaIntro2.length;
-        handsRecognized();
+        //handsRecognized();
 
         
     }
@@ -86,8 +87,10 @@ public class IntroManager : MonoBehaviour
             introState = IntroStates.phoneAnswered;
             phoneAudioSourceRingtone.Stop();
             phoneAudioSourceVibrate.Stop();
-            phoneAudioSourceCall.Play();
-            Invoke("phoneCallEnded", phoneAudioSourceCall.clip.length);
+            characterAudioSource.clip = NatalinaIntro1;
+            characterAudioSource.Play();
+            //phoneAudioSourceCall.Play();
+            Invoke("phoneCallEnded", NatalinaIntro1.length);
         }
     }
 
@@ -100,6 +103,16 @@ public class IntroManager : MonoBehaviour
 
     public void Update()
     {
+        if (introState == IntroStates.recognizingHands)
+        {
+            if (OVRPlugin.GetHandTrackingEnabled())
+            {
+                handsRecognized();
+            } else
+            {
+                //...what if they don't have hands
+            }
+        }
         if (introState == IntroStates.doorLight)
         {
             fadeLengthCurrent += Time.deltaTime;

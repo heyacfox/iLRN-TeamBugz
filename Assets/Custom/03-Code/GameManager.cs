@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
     public List<AudioClip> listOfBurnSounds;
     public List<AudioClip> listOfNewDuckSounds;
     public float pickSoundPlayPercentChance = 0.2f;
+    public AudioMixer mainAudioMixer;
 
     [Header("AudioLinksPreswarms")]
     public AudioClip pinchOnlyClip;
@@ -81,9 +83,7 @@ public class GameManager : MonoBehaviour
         updateMoneyDisplay();
         if (levelState == LevelState.tutorialLevel && tutorialState == TutorialStates.spawnIn)
         {
-            playerAudioSource.Stop();
-            playerAudioSource.clip = tutorialHandShoo;
-            playerAudioSource.Play();
+            narratorDialogueBegin(tutorialHandShoo);
             tutorialState = TutorialStates.hitWithHand;
         } else
         {
@@ -91,6 +91,20 @@ public class GameManager : MonoBehaviour
             timeLeftInDay = globalParams.getCurrentLevelTotalTime();
             bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
         }
+    }
+
+    private void narratorDialogueBegin(AudioClip audioClip)
+    {
+        mainAudioMixer.FindSnapshot("FieldNarratorTalking").TransitionTo(0.5f);
+        playerAudioSource.Stop();
+        playerAudioSource.clip = audioClip;
+        playerAudioSource.Play();
+        Invoke("narratorDialogueEnd", audioClip.length);
+    }
+
+    private void narratorDialogueEnd()
+    {
+        mainAudioMixer.FindSnapshot("FieldSnapshot").TransitionTo(0.5f);
     }
 
     public Transform getRandomExitLocation()
@@ -141,22 +155,29 @@ public class GameManager : MonoBehaviour
     {
         if (levelState == LevelState.tutorialLevel && tutorialState == TutorialStates.hitWithHand)
         {
-            playerAudioSource.Stop();
-            playerAudioSource.clip = tutorialPick1;
-            playerAudioSource.Play();
+            narratorDialogueBegin(tutorialPick1);
+            //if the player doesn't pick the bug
+            InvokeRepeating("bugPinchReminder", tutorialPick1.length + 10f, 20f);
             tutorialState = TutorialStates.pinch;
         }
+    }
+
+    private void bugPinchReminder()
+    {
+        narratorDialogueBegin(tutorialPick2);
     }
 
     public void tutorialBugPicked()
     {
         if (levelState == LevelState.tutorialLevel &&tutorialState == TutorialStates.pinch)
         {
-            playerAudioSource.Stop();
-            playerAudioSource.clip = tutorialPick2;
-            playerAudioSource.Play();
+            CancelInvoke();
+            //playerAudioSource.Stop();
+            //playerAudioSource.clip = tutorialPick2;
+            //playerAudioSource.Play();
             tutorialState = TutorialStates.phoneRing;
-            Invoke("tutorialPhoneInfoComplete", tutorialPick2.length);
+            //Invoke("tutorialPhoneInfoComplete", tutorialPick2.length);
+            tutorialPhoneInfoComplete();
         }
         
     }
@@ -165,9 +186,9 @@ public class GameManager : MonoBehaviour
     {
         if (levelState == LevelState.tutorialLevel && tutorialState == TutorialStates.phoneRing)
         {
-            playerAudioSource.Stop();
-            playerAudioSource.clip = tutorialPick2;
-            playerAudioSource.Play();
+            //playerAudioSource.Stop();
+            //playerAudioSource.clip = tutorialPick2;
+            //playerAudioSource.Play();
             /*
             if (gameState == GameState.Tutorial)
             {
@@ -195,27 +216,31 @@ public class GameManager : MonoBehaviour
 
     private void playCorrectPreswarmAudio()
     {
+        AudioClip clipToUse = pinchOnlyClip;
         if (levelState == LevelState.pinchOnly)
         {
-            playerAudioSource.clip = pinchOnlyClip;
+            clipToUse = pinchOnlyClip;
         } else if (levelState == LevelState.smoke)
         {
-            playerAudioSource.clip = smokeClip;
+            clipToUse = smokeClip;
         }
         else if (levelState == LevelState.ducks1)
         {
-            playerAudioSource.clip = duck1Clip;
+            clipToUse = duck1Clip;
         }
         else if (levelState == LevelState.ducks2)
         {
-            playerAudioSource.clip = duck1Clip;
+            clipToUse = duck1Clip;
         }
         else if (levelState == LevelState.ducks3)
         {
-            playerAudioSource.clip = duck3Clip;
+            clipToUse = duck3Clip;
+        } else if (levelState == LevelState.credits)
+        {
+            return;
         }
 
-        playerAudioSource.Play();
+        narratorDialogueBegin(clipToUse);
     }
 
     public void preSwarmBegins()
@@ -261,6 +286,10 @@ public class GameManager : MonoBehaviour
     {
         if (gameState == GameState.Swarming)
         {
+            if (cropManager.cropsCurrent() <= 0f)
+            {
+                checkWinState();
+            }
             timeLeftInDay -= Time.deltaTime;
             if (timeLeftInDay <= 0f && !dayComplete)
             {
@@ -361,20 +390,16 @@ public class GameManager : MonoBehaviour
     {
         if (cropManager.cropsCurrent() >= globalParams.goodWin)
         {
-            playerAudioSource.clip = winLevel3Clip;
-            playerAudioSource.Play();
+            narratorDialogueBegin(winLevel3Clip);
         } else if (cropManager.cropsCurrent() >= globalParams.mediumWin)
         {
-            playerAudioSource.clip = winLevel2Clip;
-            playerAudioSource.Play();
+            narratorDialogueBegin(winLevel2Clip);
         } else if (cropManager.cropsCurrent() >= globalParams.basicWin)
         {
-            playerAudioSource.clip = winLevel1Clip;
-            playerAudioSource.Play();
+            narratorDialogueBegin(winLevel1Clip);
         } else
         {
-            playerAudioSource.clip = loseGameClip;
-            playerAudioSource.Play();
+            narratorDialogueBegin(loseGameClip);
             Debug.Log("YOU LOST");
         }
         

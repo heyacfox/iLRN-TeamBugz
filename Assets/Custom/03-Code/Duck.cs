@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Duck : MonoBehaviour
 {
-    DuckStates duckState;
+    public DuckStates duckState;
     Boid attachedBoid;
     Transform patrolOrigin;
     public float eatingTime = 2f;
     public Collider triggerCollider;
+    public float distanceFromPatrolPointToStopReturning  = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class Duck : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (duckState == DuckStates.returning)
+        if (duckState == DuckStates.returning || duckState == DuckStates.waiting)
         {
             if (other.gameObject.tag == "Locust")
             {
@@ -47,12 +48,15 @@ public class Duck : MonoBehaviour
     {
         if (duckState == DuckStates.chasing)
         {
-            if (collision.collider.attachedRigidbody.gameObject.tag == "Locust")
+            if (collision.collider.attachedRigidbody != null)
             {
-                collision.gameObject.GetComponent<Locust>().getEaten();
-                duckState = DuckStates.eating;
-                attachedBoid.enabled = false;
-                Invoke("endEating", eatingTime);
+                if (collision.collider.attachedRigidbody.gameObject.tag == "Locust")
+                {
+                    collision.gameObject.GetComponent<Locust>().getEaten();
+                    duckState = DuckStates.eating;
+                    attachedBoid.enabled = false;
+                    Invoke("endEating", eatingTime);
+                }
             }
         }
     }
@@ -77,11 +81,11 @@ public class Duck : MonoBehaviour
         //Your bug got eaten, pick a new bug
         if (duckState == DuckStates.chasing && attachedBoid.Goal == null)
         {
-            
+            duckState = DuckStates.returning;
         }
         if (duckState == DuckStates.returning)
         {
-            if (Vector3.Distance(this.transform.position, attachedBoid.Goal.position) < 1f)
+            if (Vector3.Distance(this.transform.position, attachedBoid.Goal.position) < distanceFromPatrolPointToStopReturning)
             {
                 duckState = DuckStates.waiting;
             }

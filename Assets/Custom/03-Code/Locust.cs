@@ -73,7 +73,7 @@ public class Locust : MonoBehaviour
         boid.Goal = gameManager.getRandomTemporaryDestination();
         if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
         startFlySound();
-        locustState = LocustState.flyingToTarget;
+        locustState = LocustState.flyingToTargetNonFood;
         //gameManager.caughtLocust();
         //Destroy(this.gameObject);
     }
@@ -91,12 +91,17 @@ public class Locust : MonoBehaviour
 
     public void caughtLocust()
     {
-        if (onLocustPicked.GetPersistentEventCount() > 0) onLocustPicked.Invoke();
-        AudioSource.PlayClipAtPoint(squishSound, this.transform.position);
-        if (occupiedLocustLandLocation !=null) occupiedLocustLandLocation.isOccupied = false;
+        //you can't catch locusts until you finish trying to hit them first.
+        if (gameManager.tutorialState != TutorialStates.hitWithHand ||
+            gameManager.tutorialState != TutorialStates.spawnIn)
+        {
+            if (onLocustPicked.GetPersistentEventCount() > 0) onLocustPicked.Invoke();
+            AudioSource.PlayClipAtPoint(squishSound, this.transform.position);
+            if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
 
-        gameManager.caughtLocust();
-        Destroy(this.gameObject);
+            gameManager.caughtLocust();
+            Destroy(this.gameObject);
+        }
     }
 
     public void occupyLocation(LocustLandLocation landLocation)
@@ -148,8 +153,9 @@ public class Locust : MonoBehaviour
                 //find a new place to go
                 pickNewLandLocation();
             }
-        } else if (locustState == LocustState.flyingToTarget && gameManager.gameState != GameState.LocustsLeaving)
+        } else if (locustState == LocustState.flyingToTargetNonFood && gameManager.gameState != GameState.LocustsLeaving)
         {
+            //If you reached the temporary destination after the smacking occurred, now go find something to eat
             if (Vector3.Distance(boid.Goal.position, transform.position) < 3)
             {
                 pickNewLandLocation();
@@ -175,7 +181,7 @@ public class Locust : MonoBehaviour
             return;
         }
         boid.Goal = tempLocation.transform;
-        locustState = LocustState.flyingToTarget;
+        locustState = LocustState.flyingToTargetFood;
         transform.LookAt(tempLocation.transform);
     }
 
@@ -211,5 +217,6 @@ public enum LocustState
     entering,
     exiting,
     eating,
-    flyingToTarget
+    flyingToTargetNonFood,
+    flyingToTargetFood
 }

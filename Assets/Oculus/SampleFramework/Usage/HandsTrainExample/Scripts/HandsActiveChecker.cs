@@ -13,9 +13,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Events;
 
 public class HandsActiveChecker : MonoBehaviour
 {
+    public UnityEvent OnRecognizedHands;
+    public bool initialRecognize = false;
+
 	[SerializeField]
 	private GameObject _notificationPrefab = null;
 
