@@ -102,3 +102,4 @@ $RECYCLE.BIN/
 
 Logs/AssetImportWorker0.log
 Logs/AssetImportWorker0-prev.log
+Packages/packages-lock.json
