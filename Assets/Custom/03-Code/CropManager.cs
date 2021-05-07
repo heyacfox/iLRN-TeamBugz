@@ -8,6 +8,8 @@ public class CropManager : MonoBehaviour
     public List<Crop> allCrops;
     public UnityEvent onCropDestroyed;
 
+    public int cropsLeft;
+
 
     public void Awake()
     {
@@ -38,9 +40,27 @@ public class CropManager : MonoBehaviour
         
     }
 
-    public float cropsCurrent()
+    public void fakeFreeAllLocations()
+    {
+        List<LocustLandLocation> allLandLocations = new List<LocustLandLocation>();
+        foreach (Crop crop in allCrops)
+        {
+            foreach(LocustLandLocation lll in crop.landLocations)
+            {
+                lll.isOccupied = false;
+            }
+        }
+        
+    }
+
+    public int cropsCurrent()
     {
         return allCrops.Count;
+    }
+
+    private void Update()
+    {
+        cropsLeft = cropsCurrent();
     }
 
     public void removeCrop(Crop crop)

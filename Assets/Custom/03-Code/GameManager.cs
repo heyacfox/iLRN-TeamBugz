@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     public GameObject smokeParent;
     public GameObject duckParent;
 
+    public GameObject creditsCanvas;
+
     [Header("AudioLinks")]
     public AudioSource playerAudioSource;
     public AudioClip tutorialHandShoo;
@@ -50,12 +52,17 @@ public class GameManager : MonoBehaviour
     public AudioClip pinchOnlyClip;
     public AudioClip smokeClip;
     public AudioClip duck1Clip;
+    public AudioClip duck2Clip;
     public AudioClip duck3Clip;
     public AudioClip loseGameClip;
     public AudioClip winLevel1Clip;
     public AudioClip winLevel2Clip;
     public AudioClip winLevel3Clip;
     public AudioClip preSwarmOnCreditsClip;
+    public AudioClip startSuperHardMode;
+
+    private int hardModeBugTracker = 1;
+    private float hardModeBugSpawnEvery = 5f;
 
 
 
@@ -247,6 +254,7 @@ public class GameManager : MonoBehaviour
     {
         //I hate it I hate it I hate it I hate it I hate it but technically it will work to get
         //the next enum of the level
+        cropManager.fakeFreeAllLocations();
         gameState = GameState.PreSwarming;
         levelState++;
         if (levelState == LevelState.credits)
@@ -256,7 +264,7 @@ public class GameManager : MonoBehaviour
         {
             playCorrectPreswarmAudio();
 
-            if (levelState != LevelState.pinchOnly)
+            if (levelState != LevelState.pinchOnly && levelState != LevelState.hardMode)
             {
                 //starter level is tutorial, which doesn't actuall have a config.
                 globalParams.getNextLevel();
@@ -286,7 +294,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameState == GameState.Swarming)
         {
-            if (cropManager.cropsCurrent() <= 0f)
+            if (cropManager.cropsCurrent() <= 0)
             {
                 checkWinState();
             }
@@ -299,15 +307,28 @@ public class GameManager : MonoBehaviour
             bugSpawnTimer -= Time.deltaTime;
             if (bugSpawnTimer <= 0)
             {
-                //if there's more to munch
-                if (cropManager.getRandomLandLocation() != null)
+                spawnBugs();
+                if (levelState != LevelState.hardMode)
                 {
-                    spawnBugs();
                     bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
                 }
                 else
                 {
-                    bugSpawnTimer = 10000f;
+                    bugSpawnTimer = hardModeBugSpawnEvery;
+                }
+
+                //always spawn bugs, regardless if there's not open spots.
+
+                //if there's more to munch
+                if (cropManager.getRandomLandLocation() != null)
+                {
+                    
+                    
+                }
+                else
+                {
+                    //we're out of munch spots? You get to lose.
+                    //checkWinState();
                 }
 
             }
@@ -351,6 +372,10 @@ public class GameManager : MonoBehaviour
         {
             //l.moveSpeed *= 5;
             l.boid.Goal = getRandomExitLocation();
+            if (l.occupiedLocustLandLocation != null)
+            {
+                l.occupiedLocustLandLocation.isOccupied = false;
+            }
         }
         gameState = GameState.LocustsLeaving;
     }
@@ -358,11 +383,26 @@ public class GameManager : MonoBehaviour
     private void spawnBugs()
     {
         //multiple bugs CAN spawn at the exact same location and I don't care about that.
-        for (int i = 0; i < globalParams.getCurrentLevelSpawnPerWave(); i++)
+        if (levelState != LevelState.hardMode)
         {
-            Instantiate(locustPrefab, 
-                BugSpawnLocations[Random.Range(0, BugSpawnLocations.Count)].position, 
-                Quaternion.identity);
+            for (int i = 0; i < globalParams.getCurrentLevelSpawnPerWave(); i++)
+            {
+                Instantiate(locustPrefab,
+                    BugSpawnLocations[Random.Range(0, BugSpawnLocations.Count)].position,
+                    Quaternion.identity);
+            }
+        } else
+        {
+            //hard mode, one more bug spawns every wave, until you lose. 
+            //tell the player how many waves they lasted
+            for (int i = 0; i < hardModeBugTracker; i++)
+            {
+                Instantiate(locustPrefab,
+                    BugSpawnLocations[Random.Range(0, BugSpawnLocations.Count)].position,
+                    Quaternion.identity);
+            }
+            hardModeBugTracker++;
+            timeLeftInDay += 100;
         }
     }
 
@@ -388,21 +428,35 @@ public class GameManager : MonoBehaviour
 
     public void checkWinState()
     {
+        
         if (cropManager.cropsCurrent() >= globalParams.goodWin)
         {
             narratorDialogueBegin(winLevel3Clip);
+            creditsCanvas.SetActive(true);
         } else if (cropManager.cropsCurrent() >= globalParams.mediumWin)
         {
             narratorDialogueBegin(winLevel2Clip);
+            creditsCanvas.SetActive(true);
         } else if (cropManager.cropsCurrent() >= globalParams.basicWin)
         {
             narratorDialogueBegin(winLevel1Clip);
+            creditsCanvas.SetActive(true);
         } else
         {
             narratorDialogueBegin(loseGameClip);
             Debug.Log("YOU LOST");
         }
         
+    }
+
+    public void hardModeTrigger()
+    {
+        if (levelState == LevelState.credits)
+        {
+            creditsCanvas.SetActive(false);
+            globalParams.setLevelTo(globalParams.hardModeLevelConfig);
+            preSwarmBegins();
+        }
     }
     
     
@@ -436,7 +490,9 @@ public enum LevelState
     ducks1,
     ducks2,
     ducks3,
-    credits
+    credits,
+    hardMode,
+    hardModeEnd
 
 }
 

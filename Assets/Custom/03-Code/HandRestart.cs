@@ -9,6 +9,7 @@ public class HandRestart : MonoBehaviour
     OVRHand[] m_hands;
     public float totalLengthRequired = 2f;
     public float currentTime;
+
     private void Start()
     {
         

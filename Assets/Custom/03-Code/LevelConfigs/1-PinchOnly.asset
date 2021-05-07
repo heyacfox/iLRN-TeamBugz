@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a10c9f8683ae4145b49c5ac41046892, type: 3}
   m_Name: 1-PinchOnly
   m_EditorClassIdentifier: 
-  wavesToSpawn: 3
-  bugsPerWave: 2
+  wavesToSpawn: 4
+  bugsPerWave: 3
   spawnWaveEveryXSeconds: 15
   totalLevelTimeLengthSeconds: 60
   nextLevel: {fileID: 11400000, guid: 78995a0e5200a004e827a22f5e9f48e5, type: 2}

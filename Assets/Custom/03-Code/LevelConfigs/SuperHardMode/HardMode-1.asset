@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a10c9f8683ae4145b49c5ac41046892, type: 3}
-  m_Name: 5-Duck3
+  m_Name: HardMode-1
   m_EditorClassIdentifier: 
-  wavesToSpawn: 10
-  bugsPerWave: 15
-  spawnWaveEveryXSeconds: 5
-  totalLevelTimeLengthSeconds: 60
-  nextLevel: {fileID: 0}
+  wavesToSpawn: 30
+  bugsPerWave: 5
+  spawnWaveEveryXSeconds: 3
+  totalLevelTimeLengthSeconds: 120
+  nextLevel: {fileID: 11400000, guid: 54b6a303e7343e74bb46b4d29c544d6d, type: 2}

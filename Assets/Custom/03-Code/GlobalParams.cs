@@ -7,6 +7,7 @@ public class GlobalParams : ScriptableObject
 {
     LevelConfig currentLevelConfig;
     public LevelConfig startingLevelConfig;
+    public LevelConfig hardModeLevelConfig;
 
     [Header("Day Variables")]
     public float preSwarmTime = 10f;
@@ -26,6 +27,14 @@ public class GlobalParams : ScriptableObject
     //Crops do NOT recover after the locust has been removed
     public float locustMunchAtLocationMaxTime = 10f;
     public float locustBasicMoveSpeed = 5f;
+
+    [Header("Duck Variables")]
+    public float duckEatingTime = 4f;
+
+    [Header("Rubbish Variables")]
+    public float rubbishBurnPerSecond = 10f;
+    public float rubbishAccumulatePerSecond = 3f;
+    public float rubbishMax = 100f;
 
 
     public float getCurrentLevelSpawnInterval()
@@ -59,5 +68,10 @@ public class GlobalParams : ScriptableObject
     public void useStartingLevel()
     {
         currentLevelConfig = startingLevelConfig;
+    }
+
+    public void setLevelTo(LevelConfig levelConfig)
+    {
+        currentLevelConfig = levelConfig;
     }
 }

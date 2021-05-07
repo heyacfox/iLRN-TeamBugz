@@ -13,6 +13,15 @@ public class BurningRubbish : MonoBehaviour
     public Transform rubbishDisplay;
     public GameObject avoidanceCollider;
 
+    private void Start()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        rubbishMaxStock = gameManager.globalParams.rubbishMax;
+        rubbishBurnPerSecond = gameManager.globalParams.rubbishBurnPerSecond;
+        rubbishAccumulatePerSecond = gameManager.globalParams.rubbishAccumulatePerSecond;
+        rubbishStock = rubbishMaxStock;
+    }
+
     public void rubbishSelected()
     {
         if (!rubbishBurning)

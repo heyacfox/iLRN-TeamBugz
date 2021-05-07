@@ -8,23 +8,27 @@ public class LocustCollider : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        /*
         //Debug.Log("Locust collided with [" + collision.gameObject.name + "]");
         if (collision.gameObject.tag == "PlayerHands")
         {
             linkedLocust.handTouchedLocust();
         }
+        */
         
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        /*
         if (other.gameObject.tag == "LandLocation")
         {
             LocustLandLocation landLocation = other.gameObject.GetComponent<LocustLandLocation>();
             if (!landLocation.isOccupied)
             {
-                linkedLocust.occupyLocation(landLocation);
+                //linkedLocust.occupyLocation(landLocation);
             }
         }
+        */
     }
 }

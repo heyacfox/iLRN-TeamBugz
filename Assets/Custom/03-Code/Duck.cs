@@ -10,6 +10,7 @@ public class Duck : MonoBehaviour
     public float eatingTime = 2f;
     public Collider triggerCollider;
     public float distanceFromPatrolPointToStopReturning  = 3f;
+    GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class Duck : MonoBehaviour
         patrolOrigin = GameObject.FindGameObjectWithTag("DuckPatrolPoint").transform;
         attachedBoid = GetComponent<Boid>();
         duckState = DuckStates.waiting;
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+        eatingTime = gameManager.globalParams.duckEatingTime;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -85,9 +88,16 @@ public class Duck : MonoBehaviour
         }
         if (duckState == DuckStates.returning)
         {
-            if (Vector3.Distance(this.transform.position, attachedBoid.Goal.position) < distanceFromPatrolPointToStopReturning)
+            if (attachedBoid.Goal != null)
             {
-                duckState = DuckStates.waiting;
+                if (Vector3.Distance(this.transform.position, attachedBoid.Goal.position) < distanceFromPatrolPointToStopReturning)
+                {
+                    duckState = DuckStates.waiting;
+                    attachedBoid.Goal = null;
+                }
+            } else
+            {
+                attachedBoid.Goal = patrolOrigin;
             }
         }
     }

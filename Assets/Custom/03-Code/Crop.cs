@@ -36,9 +36,16 @@ public class Crop : MonoBehaviour
         if (landLocations.Count <= 0)
         {
             cropManager.removeCrop(this);
+
         }
         //make it smaller as it's getting munched?
         transform.localScale = new Vector3(transform.localScale.x / 2f, transform.localScale.y, transform.localScale.z / 2f);
+
+        if (landLocations.Count <= 0)
+        {
+            transform.localScale = new Vector3(0.001f, transform.localScale.y, 0.001f);
+        }
+        
     }
 
     

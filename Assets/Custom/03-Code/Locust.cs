@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Locust : MonoBehaviour
 {
     GameManager gameManager;
-    LocustLandLocation occupiedLocustLandLocation;
+    public LocustLandLocation occupiedLocustLandLocation;
     Rigidbody myRigidbody;
 
     public float moveSpeed;
@@ -86,13 +86,14 @@ public class Locust : MonoBehaviour
     public void getEaten()
     {
         if (onEatenByDuck.GetPersistentEventCount() > 0) onEatenByDuck.Invoke();
+        if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
         Destroy(this.gameObject);
     }
 
     public void caughtLocust()
     {
         //you can't catch locusts until you finish trying to hit them first.
-        if (gameManager.tutorialState != TutorialStates.hitWithHand ||
+        if (gameManager.tutorialState != TutorialStates.hitWithHand &&
             gameManager.tutorialState != TutorialStates.spawnIn)
         {
             if (onLocustPicked.GetPersistentEventCount() > 0) onLocustPicked.Invoke();
@@ -106,6 +107,9 @@ public class Locust : MonoBehaviour
 
     public void occupyLocation(LocustLandLocation landLocation)
     {
+        //If you ALREADY HAVE ONE
+        //STOP HAVING IT
+        if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
         landLocation.isOccupied = true;
         occupiedLocustLandLocation = landLocation;
         //begin the munch
@@ -168,6 +172,7 @@ public class Locust : MonoBehaviour
 
     private void pickNewLandLocation()
     {
+        if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
         //If this returns absolutely nothing, what should I do?
         LocustLandLocation tempLocation = gameManager.cropManager.getRandomLandLocation();
         
@@ -203,6 +208,7 @@ public class Locust : MonoBehaviour
             LocustLandLocation landLocation = other.gameObject.GetComponent<LocustLandLocation>();
             if (!landLocation.isOccupied)
             {
+                
                 occupyLocation(landLocation);
             }
         } else if (other.gameObject.tag == "LocustExit")
