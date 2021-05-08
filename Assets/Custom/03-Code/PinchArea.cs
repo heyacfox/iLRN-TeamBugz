@@ -86,6 +86,8 @@ public class PinchArea : MonoBehaviour
             if (m_isIndexStaying[0] && m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Index))
             {
                 canPinchLeft = false;
+
+                m_isIndexStaying[0] = false;
                 if (onIndexPinched.GetPersistentEventCount() > 0)
                 {
                     onIndexPinched.Invoke();
@@ -94,9 +96,11 @@ public class PinchArea : MonoBehaviour
         }
         if (canPinchRight)
         {
-            canPinchRight = false;
+            
             if (m_isIndexStaying[1] && m_hands[1].GetFingerIsPinching(OVRHand.HandFinger.Index))
             {
+                canPinchRight = false;
+                m_isIndexStaying[1] = false;
                 if (onIndexPinched.GetPersistentEventCount() > 0)
                 {
                     onIndexPinched.Invoke();
