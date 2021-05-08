@@ -21,7 +21,12 @@ public class PinchArea : MonoBehaviour
     /// </summary>
     public Renderer m_renderer;
 
+    public bool turnOffRepeatedPinch;
+    public bool canPinchLeft = true;
+    public bool canPinchRight = true;
+
     public UnityEvent onIndexPinched;
+    private Color defaultColor;
 
     /// <summary>
     /// Reference to the managers of the hands.
@@ -40,6 +45,7 @@ public class PinchArea : MonoBehaviour
     /// </summary>
     void Start()
     {
+        defaultColor = m_renderer.material.color;
         //m_renderer = GetComponent<Renderer>();
         m_hands = new OVRHand[]
         {
@@ -58,19 +64,53 @@ public class PinchArea : MonoBehaviour
     void Update()
     {
         //check for middle finger pinch on the left hand, and make che cube red in this case
+        /*
         if (m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Middle))
             m_renderer.material.color = Color.red;
         //if no pinch, and the cube was red, make it white again
         else if (m_renderer.material.color == Color.red)
             m_renderer.material.color = Color.white;
+        */
 
-        if ((m_isIndexStaying[0] && m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Index))
-            || (m_isIndexStaying[1] && m_hands[1].GetFingerIsPinching(OVRHand.HandFinger.Index)))
+        if ((m_isIndexStaying[0] && canPinchLeft) || (m_isIndexStaying[1] && canPinchRight))
         {
-            if (onIndexPinched.GetPersistentEventCount() > 0)
+            m_renderer.material.color = Color.red;
+        } else
+        {
+            m_renderer.material.color = defaultColor;
+        }
+
+
+        if (canPinchLeft)
+        {
+            if (m_isIndexStaying[0] && m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Index))
             {
-                onIndexPinched.Invoke();
+                canPinchLeft = false;
+                if (onIndexPinched.GetPersistentEventCount() > 0)
+                {
+                    onIndexPinched.Invoke();
+                }
             }
+        }
+        if (canPinchRight)
+        {
+            canPinchRight = false;
+            if (m_isIndexStaying[1] && m_hands[1].GetFingerIsPinching(OVRHand.HandFinger.Index))
+            {
+                if (onIndexPinched.GetPersistentEventCount() > 0)
+                {
+                    onIndexPinched.Invoke();
+                }
+            }
+        }
+
+        if (!m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Index))
+        {
+            canPinchLeft = true;
+        }
+        if (!m_hands[1].GetFingerIsPinching(OVRHand.HandFinger.Index))
+        {
+            canPinchRight = true;
         }
     }
 
@@ -88,8 +128,20 @@ public class PinchArea : MonoBehaviour
         //change the color of the cube accordingly (blue for left hand, green for right one)
         if (handIdx != -1)
         {
-            m_renderer.material.color = handIdx == 0 ? m_renderer.material.color = Color.blue : m_renderer.material.color = Color.green;
+            m_renderer.material.color = Color.red;
+            //m_renderer.material.color = handIdx == 0 ? m_renderer.material.color = Color.blue : m_renderer.material.color = Color.green;
             m_isIndexStaying[handIdx] = true;
+
+            //can't wave your hands around pinched and expect to get points
+            if (handIdx == 0 && m_hands[0].GetFingerIsPinching(OVRHand.HandFinger.Index))
+            {
+                canPinchLeft = false;
+            }
+
+            if (handIdx == 1 && m_hands[1].GetFingerIsPinching(OVRHand.HandFinger.Index))
+            {
+                canPinchRight = false;
+            }
         }
     }
 
@@ -108,8 +160,18 @@ public class PinchArea : MonoBehaviour
         if (handIdx != -1)
         {
             m_isIndexStaying[handIdx] = false;
+            /*
             m_renderer.material.color = m_isIndexStaying[0] ? m_renderer.material.color = Color.blue :
-                                        (m_isIndexStaying[1] ? m_renderer.material.color = Color.green : Color.white);
+                                        (m_isIndexStaying[1] ? m_renderer.material.color = Color.green : defaultColor);
+            */
+
+            if (m_isIndexStaying[0] || m_isIndexStaying[1])
+            {
+                m_renderer.material.color = Color.red;
+            } else
+            {
+                m_renderer.material.color = defaultColor;
+            }
         }
     }
 

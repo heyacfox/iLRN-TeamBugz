@@ -12,10 +12,11 @@ public class BurningRubbish : MonoBehaviour
     public ParticleSystem rubbishParticles;
     public Transform rubbishDisplay;
     public GameObject avoidanceCollider;
+    GameManager gameManager;
 
     private void Start()
     {
-        GameManager gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();
         rubbishMaxStock = gameManager.globalParams.rubbishMax;
         rubbishBurnPerSecond = gameManager.globalParams.rubbishBurnPerSecond;
         rubbishAccumulatePerSecond = gameManager.globalParams.rubbishAccumulatePerSecond;
@@ -29,6 +30,7 @@ public class BurningRubbish : MonoBehaviour
             rubbishBurning = true;
             rubbishParticles.gameObject.SetActive(true);
             avoidanceCollider.SetActive(true);
+            gameManager.usedRubbishSound();
         }
     }
 

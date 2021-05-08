@@ -125,20 +125,38 @@ public class GameManager : MonoBehaviour
 
     public void cropEatenSound()
     {
-        playerAudioSource.clip = listOfCropDestroyedSounds[Random.Range(0, listOfCropDestroyedSounds.Count)];
-        playerAudioSource.Play();
+        if (playerAudioSource != null && !playerAudioSource.isPlaying)
+        {
+            playerAudioSource.clip = listOfCropDestroyedSounds[Random.Range(0, listOfCropDestroyedSounds.Count)];
+            playerAudioSource.Play();
+        }
     }
 
     public void boughtDuckSound()
     {
-        playerAudioSource.clip = listOfNewDuckSounds[Random.Range(0, listOfNewDuckSounds.Count)];
+        if (!playerAudioSource.isPlaying)
+        {
+            playerAudioSource.clip = listOfNewDuckSounds[Random.Range(0, listOfNewDuckSounds.Count)];
         playerAudioSource.Play();
+        }
+    }
+
+    public void pinchedBugSound()
+    {
+        if (!playerAudioSource.isPlaying)
+        {
+            playerAudioSource.clip = listOfPickingSounds[Random.Range(0, listOfPickingSounds.Count)];
+            playerAudioSource.Play();
+        }
     }
 
     public void usedRubbishSound()
     {
-        playerAudioSource.clip = listOfBurnSounds[Random.Range(0, listOfBurnSounds.Count)];
-        playerAudioSource.Play();
+            if (!playerAudioSource.isPlaying)
+            {
+                playerAudioSource.clip = listOfBurnSounds[Random.Range(0, listOfBurnSounds.Count)];
+                playerAudioSource.Play();
+            }
     }
 
 
@@ -151,7 +169,12 @@ public class GameManager : MonoBehaviour
         } else if (levelState == LevelState.tutorialLevel)
         {
 
-        } else
+        } else if (levelState == LevelState.credits)
+        {
+
+        }
+            
+                else
         {
             insideRealLevel();
         }
@@ -237,7 +260,7 @@ public class GameManager : MonoBehaviour
         }
         else if (levelState == LevelState.ducks2)
         {
-            clipToUse = duck1Clip;
+            clipToUse = duck2Clip;
         }
         else if (levelState == LevelState.ducks3)
         {
@@ -419,8 +442,7 @@ public class GameManager : MonoBehaviour
             float randomCatchAudioChance = Random.Range(0, 1f);
             if (randomCatchAudioChance < pickSoundPlayPercentChance)
             {
-                playerAudioSource.clip = listOfPickingSounds[Random.Range(0, listOfPickingSounds.Count)];
-                playerAudioSource.Play();
+                pinchedBugSound();
             }
         }
         updateMoney(globalParams.moneyPerLocust);
@@ -433,30 +455,36 @@ public class GameManager : MonoBehaviour
         {
             narratorDialogueBegin(winLevel3Clip);
             creditsCanvas.SetActive(true);
+            levelState = LevelState.credits;
         } else if (cropManager.cropsCurrent() >= globalParams.mediumWin)
         {
             narratorDialogueBegin(winLevel2Clip);
             creditsCanvas.SetActive(true);
+            levelState = LevelState.credits;
         } else if (cropManager.cropsCurrent() >= globalParams.basicWin)
         {
             narratorDialogueBegin(winLevel1Clip);
             creditsCanvas.SetActive(true);
+            levelState = LevelState.credits;
         } else
         {
             narratorDialogueBegin(loseGameClip);
             Debug.Log("YOU LOST");
+            levelState = LevelState.credits;
         }
         
     }
 
     public void hardModeTrigger()
     {
+        /*
         if (levelState == LevelState.credits)
         {
             creditsCanvas.SetActive(false);
             globalParams.setLevelTo(globalParams.hardModeLevelConfig);
             preSwarmBegins();
         }
+        */
     }
     
     

@@ -151,7 +151,7 @@ public class IntroManager : MonoBehaviour
 
     public void initiateSceneTransition()
     {
-        SceneManager.LoadScene("Nathan-Sandbox");
+        SceneManager.LoadScene("FieldScene");
     }
 
     

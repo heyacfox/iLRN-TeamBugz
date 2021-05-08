@@ -14,9 +14,10 @@ public class DuckPurchase : MonoBehaviour
 
     public void Start()
     {
-        duckPurchasePrice.text = "Price:" + purchasePrice.ToString("00.00");
+        
         gameManager = FindObjectOfType<GameManager>();
         purchasePrice = gameManager.globalParams.duckPurchaseCost;
+        duckPurchasePrice.text = "Price:" + purchasePrice.ToString("$0.00");
     }
 
     public void tryBuyDuck()

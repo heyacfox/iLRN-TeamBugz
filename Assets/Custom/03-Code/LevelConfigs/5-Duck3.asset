@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 5-Duck3
   m_EditorClassIdentifier: 
   wavesToSpawn: 10
-  bugsPerWave: 15
+  bugsPerWave: 10
   spawnWaveEveryXSeconds: 5
   totalLevelTimeLengthSeconds: 60
   nextLevel: {fileID: 0}

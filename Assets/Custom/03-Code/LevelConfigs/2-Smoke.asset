@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2-Smoke
   m_EditorClassIdentifier: 
   wavesToSpawn: 6
-  bugsPerWave: 4
+  bugsPerWave: 3
   spawnWaveEveryXSeconds: 8
   totalLevelTimeLengthSeconds: 60
   nextLevel: {fileID: 11400000, guid: 557b1d40fdba4984d994a232ea6d4c70, type: 2}

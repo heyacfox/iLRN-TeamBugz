@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: MainGameParams
   m_EditorClassIdentifier: 
   startingLevelConfig: {fileID: 11400000, guid: 79db173424926aa49aad18d8a5372bcd, type: 2}
+  hardModeLevelConfig: {fileID: 11400000, guid: 9c070edec929df6458d8fee3a618de9d, type: 2}
   preSwarmTime: 10
-  moneyPerLocust: 0.5
-  duckPurchaseCost: 7
+  moneyPerLocust: 50
+  duckPurchaseCost: 700
   basicWin: 1
   mediumWin: 3
   goodWin: 6
   locustMunchAtLocationMaxTime: 10
   locustBasicMoveSpeed: 0.5
   duckEatingTime: 4
+  rubbishBurnPerSecond: 10
+  rubbishAccumulatePerSecond: 3
+  rubbishMax: 100
