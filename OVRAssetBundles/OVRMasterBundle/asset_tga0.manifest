@@ -1,18 +1,21 @@
 ManifestFileVersion: 0
-CRC: 3632240772
+CRC: 3117959332
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ee606ecfac1f5e28ac308ce5ee3dee1b
+    Hash: 178dcf2b8abaafcc00fafd222e46d4d8
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b0363f7088f9761414f730641bf9a24b
+    Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
 HashAppended: 0
 ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/NatureStarterKit2/Textures/grass02.tga
 - Assets/Oculus/VR/Textures/OculusTouchForQuest2/OculusTouchForQuest2_Right.TGA
 - Assets/Oculus/VR/Textures/OculusTouchForQuestAndRiftS/OculusQuestTouchControllerTexture.tga
 - Assets/Oculus/VR/Textures/OculusTouchForQuest2/OculusTouchForQuest2_Left.TGA
