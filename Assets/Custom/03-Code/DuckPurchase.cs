@@ -11,12 +11,17 @@ public class DuckPurchase : MonoBehaviour
     public Transform duckSpawnLocation;
     public AudioClip failBuyDuckClip;
     GameManager gameManager;
+    public MeshRenderer cyllinder;
+    public MeshRenderer duck;
+    public Material duckDefault;
+    public Material duckCanBuy;
 
     public void Start()
     {
         
         gameManager = FindObjectOfType<GameManager>();
         purchasePrice = gameManager.globalParams.duckPurchaseCost;
+        
         duckPurchasePrice.text = "Price:" + purchasePrice.ToString("$0.00");
     }
 
@@ -36,5 +41,19 @@ public class DuckPurchase : MonoBehaviour
         }
         
 
+    }
+
+    public void Update()
+    {
+        string moneyText = $"£{gameManager.currentMoney}/£{purchasePrice.ToString()}";
+        if (gameManager.currentMoney >= purchasePrice)
+        {
+            moneyText += "\nBUY NOW!";
+            cyllinder.material.color = Color.yellow;
+        } else
+        {
+            cyllinder.material.color = Color.black;
+        }
+        duckPurchasePrice.text = moneyText;
     }
 }

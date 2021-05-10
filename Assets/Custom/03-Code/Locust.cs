@@ -205,11 +205,15 @@ public class Locust : MonoBehaviour
     {
         if (other.gameObject.tag == "LandLocation")
         {
-            LocustLandLocation landLocation = other.gameObject.GetComponent<LocustLandLocation>();
-            if (!landLocation.isOccupied)
+            //Note: If locusts are flying to a target, but end up on a crop on the way there that isn't occupied, that is completely fine
+            if (locustState == LocustState.flyingToTargetFood)
             {
-                
-                occupyLocation(landLocation);
+                LocustLandLocation landLocation = other.gameObject.GetComponent<LocustLandLocation>();
+                if (!landLocation.isOccupied)
+                {
+
+                    occupyLocation(landLocation);
+                }
             }
         } else if (other.gameObject.tag == "LocustExit")
         {

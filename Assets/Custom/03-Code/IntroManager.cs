@@ -52,7 +52,7 @@ public class IntroManager : MonoBehaviour
         introState = IntroStates.phoneRinging;
         phoneAudioSourceRingtone.Play();
         phoneAudioSourceVibrate.Play();
-        InvokeRepeating("phoneReminderAudio", 30f, 15f);
+        InvokeRepeating("phoneReminderAudio", 10f, 10f);
     }
 
     private void phoneReminderAudio()

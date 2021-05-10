@@ -20,9 +20,9 @@ MonoBehaviour:
   basicWin: 1
   mediumWin: 3
   goodWin: 6
-  locustMunchAtLocationMaxTime: 10
+  locustMunchAtLocationMaxTime: 15
   locustBasicMoveSpeed: 0.5
-  duckEatingTime: 4
+  duckEatingTime: 2
   rubbishBurnPerSecond: 10
   rubbishAccumulatePerSecond: 3
   rubbishMax: 100
