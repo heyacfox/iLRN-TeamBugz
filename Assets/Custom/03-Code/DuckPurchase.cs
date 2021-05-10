@@ -48,7 +48,7 @@ public class DuckPurchase : MonoBehaviour
         string moneyText = $"£{gameManager.currentMoney}/£{purchasePrice.ToString()}";
         if (gameManager.currentMoney >= purchasePrice)
         {
-            moneyText += "\nBUY NOW!";
+            moneyText += "\nBUY DUCK NOW!";
             cyllinder.material.color = Color.yellow;
         } else
         {
