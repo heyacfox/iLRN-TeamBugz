@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
 
     private void narratorDialogueBegin(AudioClip audioClip)
     {
-        mainAudioMixer.FindSnapshot("FieldNarratorTalking").TransitionTo(0.5f);
+        mainAudioMixer.FindSnapshot("FieldNarratorTalking").TransitionTo(0.1f);
         playerAudioSource.Stop();
         playerAudioSource.clip = audioClip;
         playerAudioSource.Play();
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
 
     private void narratorDialogueEnd()
     {
-        mainAudioMixer.FindSnapshot("FieldSnapshot").TransitionTo(0.5f);
+        mainAudioMixer.FindSnapshot("FieldSnapshot").TransitionTo(0.1f);
     }
 
     public Transform getRandomExitLocation()

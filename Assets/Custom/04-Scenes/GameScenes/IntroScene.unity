@@ -3183,7 +3183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b64390875682a4db5bc438c70084bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_renderer: {fileID: 1406490287}
+  m_renderer: {fileID: 1375275040}
   turnOffRepeatedPinch: 0
   canPinchLeft: 1
   canPinchRight: 1
