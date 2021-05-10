@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3306213857
+CRC: 1962465422
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6c59a9eea2ce15ea7ccc6ce4a4ca246d
+    Hash: 95a68cf01e5ed960a3d6502e2a371347
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 811bcbcbc6773b8ecf087d926165ad5e
+    Hash: 94a9d961ef1fa71ff60201485b880a5b
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -18,6 +18,8 @@ ClassTypes:
 - Class: 21
   Script: {instanceID: 0}
 - Class: 23
+  Script: {instanceID: 0}
+- Class: 28
   Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
@@ -39,12 +41,19 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/left_touch_controller_model_skel.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
+- Assets/01_AssetStore/DoorPackFree/Meshes/Door001/Door001.FBX
+- Assets/Lowpoly_Wasteland_Props/Meshes/Box_2.FBX
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/OculusTouchForQuest2_Left.fbx
+- Assets/Models/locust.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/right_touch_controller_model_skel.fbx
+- Assets/Models/duck.fbx
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Models/SelectionCylinder.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/OculusTouchForQuest2_Right.fbx
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Models/TrainPalette.FBX
+- Assets/Lowpoly_Wasteland_Props/Meshes/Tire.FBX
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Models/ControllerBox.FBX
+- Assets/Custom/01-Art/Models/wheatSimple.fbx
 Dependencies:
-- D:/GitCodeReposD/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png1

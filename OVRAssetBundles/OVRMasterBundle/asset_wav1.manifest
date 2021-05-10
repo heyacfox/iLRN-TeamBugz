@@ -1,0 +1,46 @@
+ManifestFileVersion: 0
+CRC: 92843137
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3db9a3f959c6234cba9ee4098a8de5e3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9a2ca7bdbd1871f7131daf57de908e0c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_2.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_NewDuck_1.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_IntroLine3.wav
+- Assets/Custom/02-Sound/Sampled Sounds/Ducks_short.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_3.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_RubberFire_2.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Line9_Winning.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_CropDestroyed_1.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_RubberFire_3.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_1.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_5.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_NewDuck_2.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Line11_BarelyWinning.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_BugPinched_1.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_BugPinched_4.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_NewDuck_4.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Line4.wav
+- Assets/Custom/02-Sound/Original Sounds/NoMoney_mixkit-arcade-retro-changing-tab-206.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Line6.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Line8_EndOfDay.wav
+- Assets/Custom/02-Sound/Sampled Sounds/Grasshopper_Loop2.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_BuyingMoreDucks.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Line7.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_CropDestroyed_3.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_CropDestroyed_2.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_BugPinched_2.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_NewDuck_5.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_RubberFire_1.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_BugPinched_3.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Line10_Losing.wav
+Dependencies: []

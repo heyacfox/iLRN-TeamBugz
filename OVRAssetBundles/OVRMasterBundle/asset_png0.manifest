@@ -1,42 +1,50 @@
 ManifestFileVersion: 0
-CRC: 1071769439
+CRC: 4164850535
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 337333c7af9458dcffc02bee70ea37fb
+    Hash: cfdc079c05583afa0575874f16bd3f12
   TypeTreeHash:
     serializedVersion: 2
-    Hash: e6e651bdddca608c77d51fff2e12d033
+    Hash: f957402f1c6c48bbde14bcee38e591e0
 HashAppended: 0
 ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
 - Class: 89
   Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_01/Skybox01_Front+Z.png
+- Assets/01_AssetStore/DoorPackFree/Meshes/Door001/V1/Aferar_13 - Default_AO.png
+- Assets/Oculus/SampleFramework/Core/DebugUI/Textures/dialog.png
+- Assets/HouseoObjects/lampada1.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_main_elements_DiffuseGlossiness.png
 - Assets/Oculus/VR/Textures/HandTracking/HandTracking_uvmap_2048.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/TrainScene/Lightmap-1_comp_dir.png
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_bg_elements_Normal.png
 - Assets/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_01/Skybox01_Up+Y.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_bg_elements_Normal.png
+- Assets/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_01/Skybox01_Front+Z.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_main_elements_Normal.png
+- Assets/01_AssetStore/DoorPackFree/Meshes/Door001/V1/Aferar_13 - Default_SpecularSmoothness.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/ControllerBoxTextures/controller_plain_Normal.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/TrainScene/ReflectionProbe-0.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/XingLight.png
-- Assets/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_02_dif.png
 - Assets/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_01/Skybox01_Back-Z.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/selection_cylinder.png
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/HandsNotification.png
 - Assets/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_01/Skybox01_Down-Y.png
-- Assets/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_01/Skybox01_Left+X.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/HandsNotification.png
+- Assets/01_AssetStore/DoorPackFree/Meshes/Door001/V6/Aferar_13 - Default_AlbedoTransparency.png
 - Assets/Oculus/VR/Textures/OculusTouchForRift/touchController_albedo.png
 - Assets/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_01/Skybox01_Right-X.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/ControllerBoxTextures/controller_plain_DiffuseGlossiness.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/SmokeBillow_atlas_001_v2.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/Smoke30Frames.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/grid_10x10_v4.png
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/selection_cylinder_filled.png
+- Assets/01_AssetStore/DoorPackFree/Meshes/Door001/V1/Aferar_13 - Default_AlbedoTransparency.png
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/TrainScene/Lightmap-0_comp_dir.png
+- Assets/01_AssetStore/DoorPackFree/Meshes/Door001/V6/Aferar_13 - Default_SpecularSmoothness.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/selection_cylinder_filled.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_bg_elements_DiffuseGlossiness.png
 Dependencies: []

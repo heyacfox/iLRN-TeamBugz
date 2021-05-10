@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2512657917
+CRC: 1108706898
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: cbaabf7703fa1fa533a9eb75abe6a972
+    Hash: 8856ca99f60fc6aae6cf63c0ac8fa2d8
   TypeTreeHash:
     serializedVersion: 2
-    Hash: db8623d70ab6f67805299c4b6a8f59c7
+    Hash: aefa1f3eff47843995d4bbe5d0591272
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -18,6 +18,8 @@ ClassTypes:
 - Class: 21
   Script: {instanceID: 0}
 - Class: 23
+  Script: {instanceID: 0}
+- Class: 28
   Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
@@ -43,8 +45,12 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
 - Class: 111
   Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: ecfb396dd2101a547806b4fdaa7f5efe, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5178bc8574ce2bf4388e787a2e2af326, type: 3}
 - Class: 114
@@ -64,9 +70,13 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 286a680ab908503489d2d5449f01c521, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: e324b58cf15e9ff4db9407ffd2061366, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 605a8ce1870f78943ac552405ac9888b, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 73eac66b128fc8749a21623225c34541, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 17c4686618c7f4e45be7b654b6bcfaeb, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: c9371de340bd2354abd621fadfb9f78d, type: 3}
 - Class: 114
@@ -78,11 +88,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: b02ca0e8d170c7c4d9542354163ddb37, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 8222c169d6a3b1f4cb1ffa8992f90646, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 83ffd5d8c717af84394416b29a9135e1, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5c4a207e5bbb3c044b6c3eb819981d8b, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 95090eefe50e77847b9b4f3eec29fea0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ac3c53e41d604054b960f6d7efb48c32, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 85fb71180be543b44a6c8c1e4253dce4, type: 3}
 - Class: 114
@@ -94,15 +108,19 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: aba3c2051d1db4841a69162e8780d828, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: aed62bf3ae2456c408f247f96808ce96, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: eb6cbb133f32d4c4092ba08e3b449db4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aed62bf3ae2456c408f247f96808ce96, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ded892ce0d9b4e043844fcfd27b63b7a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: a4e71869e3ccfde47a7a16e2f483b328, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f3bdcbf6921382444aa5de984e7cd3ae, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e5a3ef75653a3e84281bf84f8b8575c5, type: 3}
 - Class: 114
@@ -123,31 +141,57 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 137
   Script: {instanceID: 0}
+- Class: 153
+  Script: {instanceID: 0}
+- Class: 154
+  Script: {instanceID: 0}
+- Class: 156
+  Script: {instanceID: 0}
+- Class: 193
+  Script: {instanceID: 0}
 - Class: 198
   Script: {instanceID: 0}
 - Class: 199
   Script: {instanceID: 0}
+- Class: 218
+  Script: {instanceID: 0}
+- Class: 243
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Custom/05-Prefab/HandRestart.prefab
+- Assets/Lowpoly_Wasteland_Props/Prefabs/Tire.prefab
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Prefabs/InteractableToolsSDKDriver.prefab
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/RightSegment.prefab
 - Assets/Oculus/VR/Prefabs/OVRHandPrefab.prefab
+- Assets/Custom/05-Prefab/Duck.prefab
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Prefabs/FingerTipPokeToolIndex.prefab
+- Assets/Custom/05-Prefab/Environment.prefab
+- Assets/Custom/05-Prefab/RubbishSystem-CLosePinch.prefab
+- Assets/NatureStarterKit2/Nature/tree01.prefab
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Prefabs/RayTool.prefab
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/StraightSegment.prefab
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/LeftSegment.prefab
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/NearFieldItems.prefab
+- Assets/Custom/05-Prefab/RubbishBurn.prefab
+- Assets/Lowpoly_Wasteland_Props/Prefabs/Box_2.prefab
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/HandsNotification.prefab
-- Assets/Custom/05-Prefab/Locust.prefab
+- Assets/01_AssetStore/DoorPackFree/Prefab/DoorV6.prefab
 - Assets/Oculus/VR/Prefabs/OVRCameraRig.prefab
+- Assets/Custom/05-Prefab/Locust.prefab
 - Assets/Oculus/VR/Prefabs/OVRControllerPrefab.prefab
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/FarFieldItems.prefab
 - Assets/Custom/05-Prefab/Crop.prefab
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/SimpleTrainTrack.prefab
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Prefabs/HandsManager.prefab
 Dependencies:
-- D:/GitCodeReposD/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_anim0
-- D:/GitCodeReposD/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_fbx0
-- D:/GitCodeReposD/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mat0
-- D:/GitCodeReposD/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mp30
-- D:/GitCodeReposD/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_wav0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_anim0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_asset0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_fbx0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mat0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mat1
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mixer0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mp30
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png1
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_wav0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_wav1

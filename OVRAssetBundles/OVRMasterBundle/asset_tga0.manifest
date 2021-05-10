@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4249948648
+CRC: 3632240772
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 00681dc21e30463c192e057f7501b300
+    Hash: ee606ecfac1f5e28ac308ce5ee3dee1b
   TypeTreeHash:
     serializedVersion: 2
     Hash: b0363f7088f9761414f730641bf9a24b
@@ -16,5 +16,8 @@ Assets:
 - Assets/Oculus/VR/Textures/OculusTouchForQuest2/OculusTouchForQuest2_Right.TGA
 - Assets/Oculus/VR/Textures/OculusTouchForQuestAndRiftS/OculusQuestTouchControllerTexture.tga
 - Assets/Oculus/VR/Textures/OculusTouchForQuest2/OculusTouchForQuest2_Left.TGA
+- Assets/NatureStarterKit2/Textures/branch01.tga
+- Assets/NatureStarterKit2/Textures/grass01.tga
+- Assets/NatureStarterKit2/Textures/bark02.tga
 - Assets/Oculus/VR/Textures/OculusTouchForQuest2/OculusTouchForQuest2_Roughness.tga
 Dependencies: []

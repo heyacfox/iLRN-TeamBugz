@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+CRC: 666608160
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 69e08df3308eca3be65cd922dbdf2f12
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Custom/01-Art/Textures/grass2.png
+- Assets/Models/LowRes.png
+- Assets/Oculus/VR/Textures/Black.png
+- Assets/Custom/01-Art/Textures/paving 5.png
+- Assets/Custom/01-Art/Textures/grass1.png
+- Assets/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_02_dif.png
+- Assets/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_01_dif.png
+- Assets/NatureStarterKit2/Nature/tree01_Textures/diffuse.png
+- Assets/NatureStarterKit2/Nature/tree01_Textures/translucency_gloss.png
+- Assets/Custom/01-Art/phone.png
+- Assets/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_01/Skybox01_Left+X.png
+- Assets/NatureStarterKit2/Nature/tree01_Textures/normal_specular.png
+- Assets/Models/Duck.001.png
+- Assets/Custom/01-Art/Textures/dirt 1.png
+- Assets/NatureStarterKit2/Nature/tree01_Textures/shadow.png
+- Assets/01_AssetStore/DoorPackFree/Meshes/Door001/V6/Aferar_13 - Default_Normal.png
+- Assets/Oculus/SampleFramework/Usage/Locomotion/Textures/wall_brick_01_dif.png
+- Assets/01_AssetStore/DoorPackFree/Meshes/Door001/V6/Aferar_13 - Default_AO.png
+- Assets/Custom/01-Art/Textures/rock 1.png
+- Assets/Custom/01-Art/Textures/rock 2.png
+Dependencies: []

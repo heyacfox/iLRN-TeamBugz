@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+CRC: 3243808172
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bb3eda68d13f69741ddb91cca709f58a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b48f5048164b4cd7f73cc9f8cf76aa5d
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Lowpoly_Wasteland_Props/Materials/Boxes.mat
+- Assets/Lowpoly_Wasteland_Props/Materials/Tire.mat
+- Assets/Custom/01-Art/TempMaterials/Green.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/HandsNotificationMaterial.mat
+- Assets/NatureStarterKit2/Materials/bark02.mat
+- Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/PokeMaterial.mat
+- Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/DefaultHandMaterial.mat
+- Assets/Custom/01-Art/TempMaterials/Grayish.mat
+- Assets/Models/Materials/LowRes.mat
+- Assets/NatureStarterKit2/Materials/branch01.mat
+- Assets/Custom/01-Art/TempMaterials/Orange.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/SmokeBillowMat.mat
+Dependencies:
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png1
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_shader0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_tga0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_tif0

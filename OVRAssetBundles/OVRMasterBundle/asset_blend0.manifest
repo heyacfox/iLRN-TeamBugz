@@ -1,0 +1,33 @@
+ManifestFileVersion: 0
+CRC: 3666297321
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e59d9ff61f72aad3a9f93a08a596a8de
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0b55f582b6d278dea6ff58c41e571bb4
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/HouseoObjects/oggetti.blend
+Dependencies: []

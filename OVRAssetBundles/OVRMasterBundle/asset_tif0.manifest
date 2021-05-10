@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3082546963
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 48d6a6d036f0c807cccc0d0a543e85fa
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b0363f7088f9761414f730641bf9a24b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Lowpoly_Wasteland_Props/Textures/Roughness/Boxes_roughness.tif
+- Assets/Lowpoly_Wasteland_Props/Textures/Albedo/Boxes_albedo.tif
+- Assets/Lowpoly_Wasteland_Props/Textures/Albedo/Tire_albedo.tif
+- Assets/Lowpoly_Wasteland_Props/Textures/Roughness/Tire_roughness.tif
+Dependencies: []

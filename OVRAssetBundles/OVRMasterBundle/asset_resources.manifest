@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3983576847
+CRC: 1306203304
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ed50f7b74035316ac1a95a930af195e3
+    Hash: b4f056c73f062ec9f264336ee614246e
   TypeTreeHash:
     serializedVersion: 2
     Hash: 856f8f9a92bf56b185dbce5480750a3e
@@ -77,5 +77,5 @@ Assets:
 - Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt
 - Assets/Oculus/VR/Resources/Unlit Transparent Color.shader
 Dependencies:
-- D:/GitCodeReposD/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_shader0
-- D:/GitCodeReposD/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_ttf0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_shader0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_ttf0

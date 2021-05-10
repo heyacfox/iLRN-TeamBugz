@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 30464722
+CRC: 1366198294
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fd5f75fd5e64211fc887a8a4a9ad52d0
+    Hash: 22f2c8939a59a256eec98ebaa4879f38
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9a2ca7bdbd1871f7131daf57de908e0c
@@ -15,4 +15,6 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Custom/02-Sound/locustEating.mp3
 - Assets/Custom/02-Sound/locustSquish.mp3
+- Assets/Custom/02-Sound/Duck-quack.mp3
+- Assets/Custom/02-Sound/Original Sounds/Strong_Punch-Mike_Koenig-574430706.mp3
 Dependencies: []

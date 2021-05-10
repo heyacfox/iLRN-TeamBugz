@@ -1,20 +1,24 @@
 ManifestFileVersion: 0
-CRC: 1597016508
+CRC: 3595446025
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9fa156134333c2e871c037f84bfced87
+    Hash: a160f6e1773fb4b48f9ea5941117bce9
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b6cf4d4ce57cf69efdb760696da83b61
+    Hash: da770f387789e5209143bf16856aee88
 HashAppended: 0
 ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
 - Class: 28
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 16442ef1477509d4fbe63f9f89c0854c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5a10c9f8683ae4145b49c5ac41046892, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 156
@@ -23,7 +27,17 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Custom/03-Code/LevelConfigs/3-Duck1.asset
 - Assets/New Terrain.asset
+- Assets/Custom/03-Code/LevelConfigs/4-Duck2.asset
+- Assets/Custom/03-Code/LevelConfigs/SuperHardMode/HardMode-3.asset
+- Assets/Custom/03-Code/LevelConfigs/SuperHardMode/HardMode-2.asset
+- Assets/Custom/03-Code/LevelConfigs/1-PinchOnly.asset
+- Assets/Custom/03-Code/LevelConfigs/2-Smoke.asset
+- Assets/Custom/03-Code/LevelConfigs/SuperHardMode/HardMode-1.asset
+- Assets/Custom/03-Code/LevelConfigs/5-Duck3.asset
 - Assets/Custom/03-Code/MainGameParams.asset
 Dependencies:
-- D:/GitCodeReposD/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_terrainlayer0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_prefab0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_terrainlayer0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_tga0
