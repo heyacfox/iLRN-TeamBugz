@@ -12,7 +12,7 @@ public class DuckPurchase : MonoBehaviour
     public AudioClip failBuyDuckClip;
     GameManager gameManager;
     public MeshRenderer cyllinder;
-    public MeshRenderer duck;
+    public SkinnedMeshRenderer duck;
     public Material duckDefault;
     public Material duckCanBuy;
 
