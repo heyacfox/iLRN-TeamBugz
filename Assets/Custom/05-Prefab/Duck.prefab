@@ -197,6 +197,7 @@ MonoBehaviour:
   eatingTime: 2
   triggerCollider: {fileID: 129686658206046645}
   distanceFromPatrolPointToStopReturning: 3
+  duckEatsBug: {fileID: 8300000, guid: bfe166572d8e8a448b5888bf80580080, type: 3}
 --- !u!135 &129686658206046645
 SphereCollider:
   m_ObjectHideFlags: 0

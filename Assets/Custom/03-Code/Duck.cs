@@ -11,6 +11,8 @@ public class Duck : MonoBehaviour
     public Collider triggerCollider;
     public float distanceFromPatrolPointToStopReturning  = 3f;
     GameManager gameManager;
+    AudioSource duckAudio;
+    public AudioClip duckEatsBug;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,7 @@ public class Duck : MonoBehaviour
         duckState = DuckStates.waiting;
         gameManager = GameObject.FindObjectOfType<GameManager>();
         eatingTime = gameManager.globalParams.duckEatingTime;
+        duckAudio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,6 +58,7 @@ public class Duck : MonoBehaviour
             {
                 if (collision.collider.attachedRigidbody.gameObject.tag == "Locust")
                 {
+                    duckAudio.PlayOneShot(duckEatsBug);
                     collision.gameObject.GetComponent<Locust>().getEaten();
                     duckState = DuckStates.eating;
                     attachedBoid.enabled = false;
