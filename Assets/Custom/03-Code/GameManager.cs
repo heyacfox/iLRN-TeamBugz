@@ -471,6 +471,7 @@ public class GameManager : MonoBehaviour
             narratorDialogueBegin(loseGameClip);
             Debug.Log("YOU LOST");
             levelState = LevelState.credits;
+            creditsCanvas.SetActive(true);
         }
         
     }
