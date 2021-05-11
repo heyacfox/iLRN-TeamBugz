@@ -9,6 +9,8 @@ public class HandRestart : MonoBehaviour
     OVRHand[] m_hands;
     public float totalLengthRequired = 2f;
     public float currentTime;
+    public MeshRenderer fillCursor;
+    GameObject leftPinkyObj;
 
     private void Start()
     {
@@ -19,6 +21,7 @@ public class HandRestart : MonoBehaviour
             GameObject.Find("OVRCameraRig/TrackingSpace/LeftHandAnchor/OVRHandPrefab").GetComponent<OVRHand>(),
             GameObject.Find("OVRCameraRig/TrackingSpace/RightHandAnchor/OVRHandPrefab").GetComponent<OVRHand>()
         };
+        leftPinkyObj = m_hands[0].gameObject;
         m_isLeftPinkieStaying = false;
     }
 
@@ -34,6 +37,9 @@ public class HandRestart : MonoBehaviour
         if (m_isLeftPinkieStaying)
         {
             currentTime += Time.deltaTime;
+            fillCursor.gameObject.SetActive(true);
+            fillCursor.material.SetFloat("_ColorRampOffset", currentTime / totalLengthRequired);
+            this.transform.position = leftPinkyObj.transform.position;
             if (currentTime > totalLengthRequired)
             {
                 loadIntroScene();
@@ -41,6 +47,7 @@ public class HandRestart : MonoBehaviour
         } else
         {
             currentTime = 0;
+            fillCursor.gameObject.SetActive(false);
         }
     }
 

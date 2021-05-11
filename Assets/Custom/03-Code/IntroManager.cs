@@ -87,6 +87,7 @@ public class IntroManager : MonoBehaviour
             introState = IntroStates.phoneAnswered;
             phoneAudioSourceRingtone.Stop();
             phoneAudioSourceVibrate.Stop();
+            phoneAudioSourceCall.Play();
             characterAudioSource.clip = NatalinaIntro1;
             characterAudioSource.Play();
             //phoneAudioSourceCall.Play();
