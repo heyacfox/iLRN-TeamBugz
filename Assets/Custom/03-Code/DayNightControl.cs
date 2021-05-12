@@ -45,7 +45,7 @@ public class DayNightControl : MonoBehaviour
         LeanTween.alpha(StarDome, 1f, 0.01f);
         LeanTween.alpha(NightDome, 1f, 0.01f);
         ProceedFrom(currentTime);
-        Invoke("Pause", 0.5f);
+        //Invoke("Pause", 0.5f);
     }
 
     public void Pause()
