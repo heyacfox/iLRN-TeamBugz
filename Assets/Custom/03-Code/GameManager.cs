@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public GameObject duckParent;
 
     public GameObject creditsCanvas;
+    public DayNightControl dayNightControl;
 
     [Header("AudioLinks")]
     public AudioSource playerAudioSource;
@@ -232,12 +233,14 @@ public class GameManager : MonoBehaviour
 
     public void swarmBegins()
     {
+        dayNightControl.Resume();
         gameState = GameState.Swarming;
         Invoke("swarmEnds", globalParams.getCurrentLevelTotalTime());
     }
 
     public void swarmEnds()
     {
+        dayNightControl.Pause();
         endDay();
         
         //(need to go to the next level)

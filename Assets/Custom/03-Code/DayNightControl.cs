@@ -32,7 +32,7 @@ public class DayNightControl : MonoBehaviour
 
     private Coroutine runningCoroutine = null;
 
-    private float currentTime = 0f;
+    public float currentTime = 0f;
 
     private List<LTDescr> tweens = new List<LTDescr>();
 
@@ -44,13 +44,18 @@ public class DayNightControl : MonoBehaviour
         DirectionalLight.intensity = 0;
         LeanTween.alpha(StarDome, 1f, 0.01f);
         LeanTween.alpha(NightDome, 1f, 0.01f);
-        currentTime = 0f;
         ProceedFrom(currentTime);
+        Invoke("Pause", 0.5f);
     }
 
     public void Pause()
     {
-        tweens.ForEach((LTDescr tween) => { if (LeanTween.isTweening(tween.id)) { tween.pause(); } });
+        tweens.ForEach((LTDescr tween) => { if (!LeanTween.isPaused(tween.id))
+            {
+                tween.pause();
+                //Debug.Log($"Paused tween [{tween.id}]");
+            }
+        });
     }
 
     /// <summary>
@@ -58,7 +63,12 @@ public class DayNightControl : MonoBehaviour
     /// </summary>
     public void Resume()
     {
-        tweens.ForEach((LTDescr tween) => { if (!LeanTween.isTweening(tween.id)) { tween.resume(); } });
+        tweens.ForEach((LTDescr tween) => { if (LeanTween.isPaused(tween.id)) 
+            { 
+                tween.resume();
+                Debug.Log($"Paused tween [{tween.id}]");
+            }
+        });
     }
 
     public void ProceedFrom(float time)
