@@ -23,8 +23,8 @@ TagManager:
   - Boid
   - DuckBoid
   - Obstacle
-  - 
-  - 
+  - CropSpring
+  - PlayerHands
   - 
   - 
   - 

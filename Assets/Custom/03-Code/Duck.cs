@@ -13,6 +13,7 @@ public class Duck : MonoBehaviour
     GameManager gameManager;
     AudioSource duckAudio;
     public AudioClip duckEatsBug;
+    Transform spawnToLookAt;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Duck : MonoBehaviour
         gameManager = GameObject.FindObjectOfType<GameManager>();
         eatingTime = gameManager.globalParams.duckEatingTime;
         duckAudio = GetComponent<AudioSource>();
+        spawnToLookAt = gameManager.getRandomExitLocation();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,6 +64,7 @@ public class Duck : MonoBehaviour
                     collision.gameObject.GetComponent<Locust>().getEaten();
                     duckState = DuckStates.eating;
                     attachedBoid.enabled = false;
+                    spawnToLookAt = gameManager.getRandomExitLocation();
                     Invoke("endEating", eatingTime);
                 }
             }
@@ -79,7 +82,7 @@ public class Duck : MonoBehaviour
     {
         if (duckState == DuckStates.eating || duckState == DuckStates.waiting)
         {
-            transform.rotation = Quaternion.identity;
+            transform.LookAt(spawnToLookAt);
         }
         if (duckState == DuckStates.chasing)
         {

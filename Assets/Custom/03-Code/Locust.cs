@@ -71,7 +71,7 @@ public class Locust : MonoBehaviour
         if (onLocustHitWithHand.GetPersistentEventCount() > 0) onLocustHitWithHand.Invoke();
         //DON"T EXIT, but do get off the crop and go away for a little bit.
         boid.Goal = gameManager.getRandomTemporaryDestination();
-        if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
+        if (occupiedLocustLandLocation != null) unOccupyLocation();
         startFlySound();
         locustState = LocustState.flyingToTargetNonFood;
         //gameManager.caughtLocust();
@@ -86,7 +86,7 @@ public class Locust : MonoBehaviour
     public void getEaten()
     {
         if (onEatenByDuck.GetPersistentEventCount() > 0) onEatenByDuck.Invoke();
-        if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
+        if (occupiedLocustLandLocation != null) unOccupyLocation();
         Destroy(this.gameObject);
     }
 
@@ -98,20 +98,28 @@ public class Locust : MonoBehaviour
         {
             if (onLocustPicked.GetPersistentEventCount() > 0) onLocustPicked.Invoke();
             AudioSource.PlayClipAtPoint(squishSound, this.transform.position);
-            if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
+            if (occupiedLocustLandLocation != null) unOccupyLocation();
 
             gameManager.caughtLocust();
             Destroy(this.gameObject);
         }
     }
 
+    private void unOccupyLocation()
+    {
+        occupiedLocustLandLocation.isOccupied = false;
+        Destroy(occupiedLocustLandLocation.GetComponent<FixedJoint>());
+    }
+
     public void occupyLocation(LocustLandLocation landLocation)
     {
         //If you ALREADY HAVE ONE
         //STOP HAVING IT
-        if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
+        
+        if (occupiedLocustLandLocation != null) unOccupyLocation();
         landLocation.isOccupied = true;
         occupiedLocustLandLocation = landLocation;
+        
         //begin the munch
         //if you get pinched, you need to set the land location as unoccupied. 
         //If the player HITS with the hand, then the locust flies away
@@ -119,7 +127,13 @@ public class Locust : MonoBehaviour
         //Lock locust to the position. No longer allowed to move.
         transform.position = landLocation.transform.position;
         transform.rotation = landLocation.transform.rotation;
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+        //FixedJoint myFixedJoint = gameObject.AddComponent<FixedJoint>();
+        //myFixedJoint.connectedBody = landLocation.GetComponent<Rigidbody>();
+        FixedJoint myFixedJoint = landLocation.gameObject.AddComponent<FixedJoint>();
+        myFixedJoint.connectedBody = this.GetComponent<Rigidbody>();
+        //GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
         locustState = LocustState.eating;
         startEatingSound();
 
@@ -172,7 +186,7 @@ public class Locust : MonoBehaviour
 
     private void pickNewLandLocation()
     {
-        if (occupiedLocustLandLocation != null) occupiedLocustLandLocation.isOccupied = false;
+        if (occupiedLocustLandLocation != null) unOccupyLocation();
         //If this returns absolutely nothing, what should I do?
         LocustLandLocation tempLocation = gameManager.cropManager.getRandomLandLocation();
         
