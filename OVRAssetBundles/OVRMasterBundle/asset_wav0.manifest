@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2098094946
+CRC: 4002253391
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b83ee1d66a4bd602b1b40471d90a8a7a
+    Hash: 00986de5f744001138de164ecebe1b26
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9a2ca7bdbd1871f7131daf57de908e0c
@@ -13,34 +13,34 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Windmill_Stop.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_2.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_NewDuck_1.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_IntroLine3.wav
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Stop_From_Speed_4.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_SteamBlast_A.wav
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/TrainWhistleAv01.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Start_From_Stop_v01.wav
 - Assets/Custom/02-Sound/Sampled Sounds/PhoneVibrating.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Speed_3_Loop.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_CropDestroyed_1.wav
 - Assets/Custom/02-Sound/Sampled Sounds/PhoneRinging.wav
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Audio/ButtonUp.wav
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Windmill_Start.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Speed_5_Loop.wav
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Speed_3_Loop.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_5.wav
 - Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_NewDuck_3.wav
+- Assets/Custom/02-Sound/Original Sounds/Phone1.wav
 - Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_noPhoneInteraction_2.wav
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Speed_1_Loop.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Moo_Cow.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_NewDuck_2.wav
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Speed_5_Loop.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_BugPinched_1.wav
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Stop_From_Speed_1.wav
 - Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_noPhoneInteraction_3.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Stop_From_Speed_3.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Speed_2_Loop.wav
+- Assets/Custom/02-Sound/Original Sounds/NoMoney_mixkit-arcade-retro-changing-tab-206.wav
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Windmill_Rotate_Slow_Loop.wav
 - Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_IntroLine2.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Crossing.wav
 - Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_noPhoneInteraction_1.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Speed_4_Loop.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_CropDestroyed_3.wav
 - Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_IntroLine1_short.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Stop_From_Speed_2.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Windmill_Rotate_Fast_Loop.wav
 - Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_noDoorInteraction_2.wav
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Audio/Train_Stop_From_Speed_5.wav
 - Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/PlayerInfo_noDoorInteraction_1.wav
+- Assets/Custom/02-Sound/Dialogue Recordings/wav_saved/Natalina_Random_BugPinched_3.wav
 Dependencies: []

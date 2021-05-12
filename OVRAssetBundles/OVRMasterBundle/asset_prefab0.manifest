@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3258780743
+CRC: 2635853739
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8856ca99f60fc6aae6cf63c0ac8fa2d8
+    Hash: c462d5c399e7cef85fc137ac7d4096a1
   TypeTreeHash:
     serializedVersion: 2
-    Hash: aefa1f3eff47843995d4bbe5d0591272
+    Hash: 2a87dd96c6fa821d6aa75a1f2994057f
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -66,6 +66,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 68a26abcaa6c9634681e21c3d4eb1efe, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: b44ce65a055db6046b4ba0bf1aa49643, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 54c16b381e28e8d479237771d234dbae, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 286a680ab908503489d2d5449f01c521, type: 3}
@@ -95,6 +97,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 5c4a207e5bbb3c044b6c3eb819981d8b, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 95090eefe50e77847b9b4f3eec29fea0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1a2513198d365db44b307b08fdec571c, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ac3c53e41d604054b960f6d7efb48c32, type: 3}
 - Class: 114
@@ -164,8 +168,10 @@ Assets:
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Prefabs/InteractableToolsSDKDriver.prefab
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/RightSegment.prefab
 - Assets/Oculus/VR/Prefabs/OVRHandPrefab.prefab
-- Assets/Custom/05-Prefab/Duck.prefab
+- Assets/Oculus/VR/Prefabs/Cursor_Timer.prefab
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Prefabs/FingerTipPokeToolIndex.prefab
+- Assets/MASH Virtual/Assets/Prefab/Table_Old.prefab
+- Assets/Custom/05-Prefab/Duck.prefab
 - Assets/Custom/05-Prefab/Environment.prefab
 - Assets/Custom/05-Prefab/RubbishSystem-CLosePinch.prefab
 - Assets/NatureStarterKit2/Nature/tree01.prefab
@@ -182,6 +188,7 @@ Assets:
 - Assets/Oculus/VR/Prefabs/OVRControllerPrefab.prefab
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/FarFieldItems.prefab
 - Assets/Custom/05-Prefab/Crop.prefab
+- Assets/Custom/05-Prefab/DayNightControl.prefab
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Prefabs/SimpleTrainTrack.prefab
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Prefabs/HandsManager.prefab
 Dependencies:
@@ -192,6 +199,8 @@ Dependencies:
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mat1
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mixer0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mp30
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png1
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_wav0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_wav1
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_wav2

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1292923973
+CRC: 4178571942
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 73bb988f553c7dd52c9c078fa1b62a5b
+    Hash: 8e9e87ed020af14fbdde9c62de55baf7
   TypeTreeHash:
     serializedVersion: 2
     Hash: e6e651bdddca608c77d51fff2e12d033
@@ -15,6 +15,8 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Custom/04-Scenes/GameScenes/IntroScene/ReflectionProbe-0.exr
+- Assets/Custom/04-Scenes/GameScenes/IntroScene/Lightmap-0_comp_light.exr
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/TrainScene/ReflectionProbe-1.exr
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/TrainScene/Lightmap-0_comp_light.exr
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/TrainScene/Lightmap-1_comp_light.exr

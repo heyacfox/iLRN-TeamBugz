@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3243808172
+CRC: 2599915274
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: bb3eda68d13f69741ddb91cca709f58a
+    Hash: 52be59b31a6a118b1d84241467cbb8fe
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b48f5048164b4cd7f73cc9f8cf76aa5d
+    Hash: 9784b23ac3fcb93f4b235343e8d9877e
 HashAppended: 0
 ClassTypes:
 - Class: 21
@@ -15,21 +15,28 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Lowpoly_Wasteland_Props/Materials/Boxes.mat
+- Assets/Custom/01-Art/TempMaterials/Void.mat
 - Assets/Lowpoly_Wasteland_Props/Materials/Tire.mat
-- Assets/Custom/01-Art/TempMaterials/Green.mat
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/HandsNotificationMaterial.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/SkyboxForRealtime.mat
 - Assets/NatureStarterKit2/Materials/bark02.mat
-- Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/PokeMaterial.mat
-- Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/DefaultHandMaterial.mat
 - Assets/Custom/01-Art/TempMaterials/Grayish.mat
 - Assets/Models/Materials/LowRes.mat
 - Assets/NatureStarterKit2/Materials/branch01.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/XingLightMaterial.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/SmokeMat.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/ControllerBoxButtons.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/PropMaterial.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/ControllerBoxGlow.mat
+- Assets/Custom/01-Art/Starstexture.mat
 - Assets/Custom/01-Art/TempMaterials/Orange.mat
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/SmokeBillowMat.mat
 Dependencies:
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_jpg0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png1
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_shader0

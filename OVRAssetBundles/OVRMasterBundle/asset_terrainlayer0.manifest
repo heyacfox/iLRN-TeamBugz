@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2575932495
+CRC: 5203492
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 547ffec7271f14e8a9755f462eed9d3c
+    Hash: 58c1cdb5457a5cc6b29a819cbafd8b05
   TypeTreeHash:
     serializedVersion: 2
     Hash: 0b1b996afefcdb43727f3042384e65d2
@@ -26,4 +26,5 @@ Assets:
 - Assets/NewLayer 8.terrainlayer
 - Assets/NewLayer 7.terrainlayer
 Dependencies:
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png1

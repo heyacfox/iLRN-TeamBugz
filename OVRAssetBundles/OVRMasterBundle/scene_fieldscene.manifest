@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1906101663
+CRC: 1360565025
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: dae206a330ace3f3aab6effdae25da55
+    Hash: 4e931425c898988c17437585fcb593c4
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 08a76d36174201898bdfa5bc59312b14
+    Hash: 03cbb9e3ee27e65200d4588153b6ce2a
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -67,6 +67,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 6d778f6e8fb868247b9f0c8ef05dfe41, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: cb7623a8f0b49cf4dbaa40aea4d4be64, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b44ce65a055db6046b4ba0bf1aa49643, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 54c16b381e28e8d479237771d234dbae, type: 3}
 - Class: 114
@@ -198,6 +200,7 @@ Dependencies:
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mat1
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mixer0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png1
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_prefab0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_resources
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_wav0

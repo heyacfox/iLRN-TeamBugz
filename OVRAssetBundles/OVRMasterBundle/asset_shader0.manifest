@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 817026614
+CRC: 1960151045
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 656cb4e9c433b945813f4abaa276548a
+    Hash: 15be008e31e7046da0e25c7bbe7c6e2a
   TypeTreeHash:
     serializedVersion: 2
     Hash: 79f786ec140312af9ec009eebd4de22e
@@ -13,6 +13,7 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Oculus/VR/Shaders/OVRColorRampAlpha.shader
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Shaders/ButtonGlow.shader
 - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Shaders/OculusSampleTrainPropsShader.shader

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 862719561
+CRC: 4031967581
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5cde63b2f053f6d9383b799d68478686
+    Hash: 22822f2803a8b7f3b8757839de945f9c
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 9b80cf43273b639b35d6042e4b4430f7
+    Hash: 9a409ab8e00afe9e44ee75aa502c24a7
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -90,6 +90,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 1a2513198d365db44b307b08fdec571c, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: ac3c53e41d604054b960f6d7efb48c32, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 85fb71180be543b44a6c8c1e4253dce4, type: 3}
@@ -102,6 +104,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 84b06ea05026ff447932a10c6957d3f0, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: aed62bf3ae2456c408f247f96808ce96, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: ded892ce0d9b4e043844fcfd27b63b7a, type: 3}
@@ -113,8 +117,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: f58463a8ddf862a45a7a5dbd85d11ffd, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: c7b64390875682a4db5bc438c70084bc, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 84b06ea05026ff447932a10c6957d3f0, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 120
@@ -151,13 +153,10 @@ Assets:
 Dependencies:
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_blend0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_exr0
-- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_fbx0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mat0
-- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mat1
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mixer0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_mp30
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png0
-- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png1
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_prefab0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_resources
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_wav0

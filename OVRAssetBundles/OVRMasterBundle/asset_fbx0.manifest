@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 609324138
+CRC: 1855781612
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 95a68cf01e5ed960a3d6502e2a371347
+    Hash: e4696deb0399f0080ce5ef42c8e07828
   TypeTreeHash:
     serializedVersion: 2
     Hash: 94a9d961ef1fa71ff60201485b880a5b
@@ -39,6 +39,7 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/MASH Virtual/Assets/Mesh/Table.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/left_touch_controller_model_skel.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
 - Assets/01_AssetStore/DoorPackFree/Meshes/Door001/Door001.FBX
@@ -48,6 +49,8 @@ Assets:
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/right_touch_controller_model_skel.fbx
 - Assets/Models/duck.fbx
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Models/SelectionCylinder.fbx
+- Assets/Models/StarDome.fbx
+- Assets/Models/StarDome 1.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/OculusTouchForQuest2_Right.fbx
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Models/TrainPalette.FBX

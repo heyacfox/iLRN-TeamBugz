@@ -1,38 +1,43 @@
 ManifestFileVersion: 0
-CRC: 1656109287
+CRC: 63529354
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 69e08df3308eca3be65cd922dbdf2f12
+    Hash: 95bba767d95a0fddd22c9d8bf061ca3b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4df8c69f2c8a6ad9e3cbf82bb83e4dc3
+    Hash: e6e651bdddca608c77d51fff2e12d033
 HashAppended: 0
 ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
-- Class: 213
+- Class: 89
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Custom/01-Art/Textures/grass2.png
-- Assets/Models/LowRes.png
 - Assets/Oculus/VR/Textures/Black.png
+- Assets/Models/LowRes.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_main_elements_DiffuseGlossiness.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/TrainScene/Lightmap-1_comp_dir.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_bg_elements_Normal.png
 - Assets/Custom/01-Art/Textures/paving 5.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_main_elements_Normal.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/ControllerBoxTextures/controller_plain_Normal.png
 - Assets/Custom/01-Art/Textures/grass1.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/TrainScene/ReflectionProbe-0.png
 - Assets/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_02_dif.png
 - Assets/Oculus/SampleFramework/Usage/Locomotion/Textures/floor_wood_01_dif.png
-- Assets/NatureStarterKit2/Nature/tree01_Textures/diffuse.png
 - Assets/NatureStarterKit2/Nature/tree01_Textures/translucency_gloss.png
-- Assets/Custom/01-Art/phone.png
-- Assets/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_01/Skybox01_Left+X.png
-- Assets/NatureStarterKit2/Nature/tree01_Textures/normal_specular.png
+- Assets/Models/Starstexture.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/selection_cylinder.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/XingLight.png
 - Assets/Models/Duck.001.png
 - Assets/Custom/01-Art/Textures/dirt 1.png
 - Assets/NatureStarterKit2/Nature/tree01_Textures/shadow.png
-- Assets/01_AssetStore/DoorPackFree/Meshes/Door001/V6/Aferar_13 - Default_Normal.png
-- Assets/Oculus/SampleFramework/Usage/Locomotion/Textures/wall_brick_01_dif.png
-- Assets/01_AssetStore/DoorPackFree/Meshes/Door001/V6/Aferar_13 - Default_AO.png
-- Assets/Custom/01-Art/Textures/rock 1.png
-- Assets/Custom/01-Art/Textures/rock 2.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/ControllerBoxTextures/controller_plain_DiffuseGlossiness.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/SmokeBillow_atlas_001_v2.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/grid_10x10_v4.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/selection_cylinder_filled.png
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_bg_elements_DiffuseGlossiness.png
+- Assets/Custom/01-Art/Textures/grass2.png
 Dependencies: []

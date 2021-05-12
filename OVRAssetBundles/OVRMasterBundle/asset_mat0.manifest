@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3963810996
+CRC: 3315268891
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b5c4dec2c70a6b4a2d2236eb587b57c0
+    Hash: cc06295590ec19b28a4e51bf06fb7687
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9784b23ac3fcb93f4b235343e8d9877e
@@ -22,35 +22,34 @@ Assets:
 - Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/Materials/OculusTouchForQuestAndRiftS_Material.mat
 - Assets/Oculus/VR/Materials/BasicHandMaterial.mat
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/WindmillMaterial.mat
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/ControllerBox.mat
+- Assets/Custom/01-Art/TempMaterials/Green.mat
 - Assets/Custom/01-Art/TempMaterials/LighterGrayish.mat
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/SkyboxForRealtime.mat
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/SelectionCylinder.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/ControllerBox.mat
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/TargetMaterial.mat
-- Assets/Oculus/VR/Meshes/OculusTouchForQuest2/Materials/OculusTouchForQuest2_Right.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/SelectionCylinder.mat
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/SystemGestureSkeletonBoneMaterial.mat
+- Assets/Oculus/VR/Meshes/OculusTouchForQuest2/Materials/OculusTouchForQuest2_Right.mat
 - Assets/01_AssetStore/DoorPackFree/Meshes/Door001/Materials/V6.mat
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/BackgroundMaterial.mat
+- Assets/Oculus/VR/Materials/cursor_timer_material.mat
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/SystemGestureHandMaterial.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/HandsNotificationMaterial.mat
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/RayMaterial.mat
+- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/BackgroundMaterial.mat
 - Assets/Oculus/VR/Meshes/OculusTouchForRift/Materials/OculusTouchForRift_Material.mat
 - Assets/Oculus/SampleFramework/Usage/SharedAssets/Skyboxes/Sky_01/Skybox01.mat
 - Assets/Oculus/VR/Meshes/OculusTouchForQuest2/Materials/OculusTouchForQuest2_Left.mat
+- Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/PokeMaterial.mat
 - Assets/Custom/01-Art/TempMaterials/Brown.mat
 - Assets/HouseoObjects/Materials/lampada1.mat
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/XingLightMaterial.mat
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/SmokeMat.mat
+- Assets/MASH Virtual/Assets/Material/Table Old Mat.mat
+- Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/DefaultHandMaterial.mat
 - Assets/01_AssetStore/DoorPackFree/Meshes/Door001/Materials/13 - Default.mat
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/ControllerBoxButtons.mat
 - Assets/Oculus/SampleFramework/Core/HandsInteraction/Materials/SkeletonBoneMaterial.mat
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/PropMaterial.mat
 - Assets/Custom/01-Art/TempMaterials/Black.mat
 - Assets/01_AssetStore/DoorPackFree/Meshes/Door001/Materials/V1.mat
-- Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/ControllerBoxGlow.mat
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/SelectionCylinderBase.mat
 - Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Materials/GridMat.mat
 Dependencies:
-- C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_jpg0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png0
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_png1
 - C:/GitCodeRepos/GitHub/iLRN-TeamBugz/OVRAssetBundles/OVRMasterBundle/asset_shader0

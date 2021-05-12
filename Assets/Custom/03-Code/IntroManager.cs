@@ -29,7 +29,7 @@ public class IntroManager : MonoBehaviour
 
     float fadeLengthMax;
     float fadeLengthCurrent = 0f;
-
+    public SceneSwapManager sceneSwapManager;
 
     private void Start()
     {
@@ -145,14 +145,21 @@ public class IntroManager : MonoBehaviour
     {
         CancelInvoke();
         introState = IntroStates.doorOpened;
-        OVRScreenFade screenFade = FindObjectOfType<OVRScreenFade>();
-        screenFade.FadeOut();
-        Invoke("initiateSceneTransition", screenFade.fadeTime);
+        //OVRScreenFade screenFade = FindObjectOfType<OVRScreenFade>();
+        //screenFade.FadeOut();
+        //Invoke("initiateSceneTransition", screenFade.fadeTime);
+        initiateSceneTransition();
     }
 
     public void initiateSceneTransition()
     {
-        SceneManager.LoadScene("FieldScene");
+
+        //SceneManager.LoadScene("FieldScene", LoadSceneMode.Additive);
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName("FieldScene"));
+        //SceneManager.UnloadSceneAsync("IntroScene");
+
+        //SceneManager.LoadScene("FieldScene");
+        sceneSwapManager.swapToField();
     }
 
     

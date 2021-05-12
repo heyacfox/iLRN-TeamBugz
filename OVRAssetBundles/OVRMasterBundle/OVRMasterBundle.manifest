@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3411860712
+CRC: 731965788
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -11,117 +11,121 @@ AssetBundleManifest:
       Name: scene_introscene
       Dependencies:
         Dependency_0: asset_resources
-        Dependency_1: asset_wav0
-        Dependency_2: asset_png0
-        Dependency_3: asset_png1
-        Dependency_4: asset_prefab0
-        Dependency_5: asset_mat0
-        Dependency_6: asset_mat1
-        Dependency_7: asset_fbx0
-        Dependency_8: asset_exr0
-        Dependency_9: asset_mixer0
-        Dependency_10: asset_blend0
-        Dependency_11: asset_mp30
+        Dependency_1: asset_png0
+        Dependency_2: asset_mat0
+        Dependency_3: asset_prefab0
+        Dependency_4: asset_wav0
+        Dependency_5: asset_exr0
+        Dependency_6: asset_blend0
+        Dependency_7: asset_mp30
+        Dependency_8: asset_mixer0
     Info_2:
       Name: scene_fieldscene
       Dependencies:
         Dependency_0: asset_resources
-        Dependency_1: asset_wav0
-        Dependency_2: asset_wav1
-        Dependency_3: asset_png0
-        Dependency_4: asset_prefab0
-        Dependency_5: asset_mat0
-        Dependency_6: asset_mat1
-        Dependency_7: asset_fbx0
-        Dependency_8: asset_exr0
-        Dependency_9: asset_asset0
-        Dependency_10: asset_mixer0
-    Info_3:
-      Name: asset_wav0
-      Dependencies: {}
-    Info_4:
-      Name: asset_wav1
-      Dependencies: {}
-    Info_5:
-      Name: asset_png0
-      Dependencies: {}
-    Info_6:
-      Name: asset_png1
-      Dependencies: {}
-    Info_7:
-      Name: asset_prefab0
-      Dependencies:
-        Dependency_0: asset_wav0
-        Dependency_1: asset_wav1
+        Dependency_1: asset_png0
         Dependency_2: asset_png1
         Dependency_3: asset_mat0
         Dependency_4: asset_mat1
         Dependency_5: asset_fbx0
-        Dependency_6: asset_asset0
-        Dependency_7: asset_mixer0
-        Dependency_8: asset_mp30
-        Dependency_9: asset_anim0
-    Info_8:
+        Dependency_6: asset_prefab0
+        Dependency_7: asset_wav0
+        Dependency_8: asset_wav1
+        Dependency_9: asset_exr0
+        Dependency_10: asset_mixer0
+        Dependency_11: asset_asset0
+    Info_3:
+      Name: asset_png0
+      Dependencies: {}
+    Info_4:
+      Name: asset_png1
+      Dependencies: {}
+    Info_5:
       Name: asset_mat0
       Dependencies:
         Dependency_0: asset_png0
         Dependency_1: asset_png1
-        Dependency_2: asset_shader0
-        Dependency_3: asset_tga0
-        Dependency_4: asset_jpg0
-    Info_9:
+        Dependency_2: asset_tga0
+        Dependency_3: asset_shader0
+    Info_6:
       Name: asset_mat1
       Dependencies:
         Dependency_0: asset_png0
         Dependency_1: asset_png1
-        Dependency_2: asset_shader0
-        Dependency_3: asset_tga0
+        Dependency_2: asset_tga0
+        Dependency_3: asset_shader0
         Dependency_4: asset_tif0
-    Info_10:
-      Name: asset_psd0
-      Dependencies: {}
-    Info_11:
-      Name: asset_shader0
-      Dependencies: {}
-    Info_12:
+        Dependency_5: asset_jpg0
+    Info_7:
       Name: asset_fbx0
       Dependencies:
         Dependency_0: asset_png1
         Dependency_1: asset_mat0
+    Info_8:
+      Name: asset_prefab0
+      Dependencies:
+        Dependency_0: asset_png0
+        Dependency_1: asset_png1
+        Dependency_2: asset_mat0
+        Dependency_3: asset_mat1
+        Dependency_4: asset_fbx0
+        Dependency_5: asset_wav0
+        Dependency_6: asset_wav1
+        Dependency_7: asset_wav2
+        Dependency_8: asset_mp30
+        Dependency_9: asset_mixer0
+        Dependency_10: asset_asset0
+        Dependency_11: asset_anim0
+    Info_9:
+      Name: asset_tga0
+      Dependencies: {}
+    Info_10:
+      Name: asset_shader0
+      Dependencies: {}
+    Info_11:
+      Name: asset_psd0
+      Dependencies: {}
+    Info_12:
+      Name: asset_wav0
+      Dependencies: {}
     Info_13:
-      Name: asset_exr0
+      Name: asset_wav1
       Dependencies: {}
     Info_14:
+      Name: asset_wav2
+      Dependencies: {}
+    Info_15:
+      Name: asset_exr0
+      Dependencies: {}
+    Info_16:
+      Name: asset_blend0
+      Dependencies: {}
+    Info_17:
+      Name: asset_mp30
+      Dependencies: {}
+    Info_18:
+      Name: asset_mixer0
+      Dependencies: {}
+    Info_19:
       Name: asset_asset0
       Dependencies:
         Dependency_0: asset_prefab0
         Dependency_1: asset_tga0
         Dependency_2: asset_terrainlayer0
-    Info_15:
-      Name: asset_mixer0
-      Dependencies: {}
-    Info_16:
-      Name: asset_tga0
-      Dependencies: {}
-    Info_17:
-      Name: asset_jpg0
-      Dependencies: {}
-    Info_18:
-      Name: asset_blend0
-      Dependencies: {}
-    Info_19:
-      Name: asset_mp30
-      Dependencies: {}
     Info_20:
-      Name: asset_anim0
-      Dependencies: {}
-    Info_21:
       Name: asset_ttf0
       Dependencies: {}
-    Info_22:
+    Info_21:
       Name: asset_tif0
       Dependencies: {}
-    Info_23:
+    Info_22:
       Name: asset_terrainlayer0
       Dependencies:
-        Dependency_0: asset_png1
+        Dependency_0: asset_png0
+        Dependency_1: asset_png1
+    Info_23:
+      Name: asset_jpg0
+      Dependencies: {}
+    Info_24:
+      Name: asset_anim0
+      Dependencies: {}
