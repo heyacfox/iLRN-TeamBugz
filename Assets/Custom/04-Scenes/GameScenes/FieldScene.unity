@@ -21749,7 +21749,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4361955424481966740, guid: 76f4f0490df6e5645a436676598a695b, type: 3}
       propertyPath: DayLength
-      value: 30
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4361955424481966740, guid: 76f4f0490df6e5645a436676598a695b, type: 3}
       propertyPath: NightLength
