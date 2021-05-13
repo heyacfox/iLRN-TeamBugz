@@ -17,8 +17,7 @@ public class CanvasFactShower : MonoBehaviour
     {
         LeanTween.alphaText(factTextObject.rectTransform, 0f, 0f);
         currentFact = Random.Range(0, factList.Count);
-        fadeInNewFact();
-        InvokeRepeating("pickNewFact", 15f, 15f);
+        InvokeRepeating("pickNewFact", 0f, 12f);
     }
 
     public void pickNewFact()

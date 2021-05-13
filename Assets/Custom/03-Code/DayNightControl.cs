@@ -45,7 +45,7 @@ public class DayNightControl : MonoBehaviour
         LeanTween.alpha(StarDome, 1f, 0.01f);
         LeanTween.alpha(NightDome, 1f, 0.01f);
         ProceedFrom(currentTime);
-        //Invoke("Pause", 0.5f);
+        
     }
 
     public void Pause()
@@ -53,7 +53,7 @@ public class DayNightControl : MonoBehaviour
         tweens.ForEach((LTDescr tween) => { if (!LeanTween.isPaused(tween.id))
             {
                 tween.pause();
-                //Debug.Log($"Paused tween [{tween.id}]");
+                Debug.Log($"Paused tween [{tween.id}]");
             }
         });
     }
@@ -63,11 +63,13 @@ public class DayNightControl : MonoBehaviour
     /// </summary>
     public void Resume()
     {
-        tweens.ForEach((LTDescr tween) => { if (LeanTween.isPaused(tween.id)) 
-            { 
+        tweens.ForEach((LTDescr tween) => { 
+            //if (LeanTween.isPaused(tween.id)) 
+            //{ 
                 tween.resume();
-                Debug.Log($"Paused tween [{tween.id}]");
-            }
+                Debug.Log($"Resumed tween [{tween.id}]");
+            //}
+            //Resume everey gosh darn tween I don't care what the ID is.
         });
     }
 

@@ -30,6 +30,7 @@ public class IntroManager : MonoBehaviour
     float fadeLengthMax;
     float fadeLengthCurrent = 0f;
     public SceneSwapManager sceneSwapManager;
+    public Camera mainCamera;
 
     private void Start()
     {
@@ -147,8 +148,9 @@ public class IntroManager : MonoBehaviour
         introState = IntroStates.doorOpened;
         //OVRScreenFade screenFade = FindObjectOfType<OVRScreenFade>();
         //screenFade.FadeOut();
-        //Invoke("initiateSceneTransition", screenFade.fadeTime);
-        initiateSceneTransition();
+        //I have NO CLUE HOW TO GET THE FADE TO ACTUALLY WORK
+        Invoke("initiateSceneTransition", 0f);
+        //initiateSceneTransition();
     }
 
     public void initiateSceneTransition()
@@ -159,7 +161,11 @@ public class IntroManager : MonoBehaviour
         //SceneManager.UnloadSceneAsync("IntroScene");
 
         //SceneManager.LoadScene("FieldScene");
+        //mainCamera.
         sceneSwapManager.swapToField();
+        //OVRScreenFade screenFade = FindObjectOfType<OVRScreenFade>();
+        //screenFade.FadeIn();
+        mainCamera.clearFlags = CameraClearFlags.Skybox;
     }
 
     

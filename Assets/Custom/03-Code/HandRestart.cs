@@ -53,6 +53,7 @@ public class HandRestart : MonoBehaviour
 
     private void loadIntroScene()
     {
-        SceneManager.LoadScene("IntroScene");
+        
+        SceneManager.LoadScene("FieldScene");
     }
 }

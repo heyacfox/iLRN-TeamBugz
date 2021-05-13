@@ -130,7 +130,9 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: bcb2e6fdcffdd834c86912bffc8659d2, type: 2}
+  - {fileID: 7058389777488537113, guid: 0d7b2c000b8540248a099d3e2324587e, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -148,7 +150,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.iLRNTeamBugz
+    Android: com.TeamBugz.LocustDefense
     Standalone: com.TeamBugz.Swarm
   buildNumber:
     Standalone: 0

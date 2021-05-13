@@ -93,12 +93,18 @@ public class GameManager : MonoBehaviour
         {
             narratorDialogueBegin(tutorialHandShoo);
             tutorialState = TutorialStates.hitWithHand;
+            Invoke("runDelayedPause", 0.5f);
         } else
         {
             globalParams.getNextLevel();
             timeLeftInDay = globalParams.getCurrentLevelTotalTime();
             bugSpawnTimer = globalParams.getCurrentLevelSpawnInterval();
         }
+    }
+
+    private void runDelayedPause()
+    {
+        dayNightControl.Pause();
     }
 
     private void narratorDialogueBegin(AudioClip audioClip)
@@ -226,6 +232,7 @@ public class GameManager : MonoBehaviour
                 levelState = LevelState.pinchOnly;
             }
             */
+            //dayNightControl.Resume();
             preSwarmBegins();
         }
 

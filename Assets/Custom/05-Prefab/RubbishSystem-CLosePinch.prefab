@@ -5178,8 +5178,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5118257, y: 0.7517293, z: 0.5311848}
-  m_Center: {x: 0.027076542, y: -0.06913534, z: -0.01810567}
+  m_Size: {x: 0.8139142, y: 0.87917805, z: 0.5311848}
+  m_Center: {x: -0.028232038, y: -0.0054109693, z: -0.018105686}
 --- !u!114 &4541368140673389701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5207,6 +5207,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  actionDelayTime: 0
 --- !u!1001 &1590611208609429063
 PrefabInstance:
   m_ObjectHideFlags: 0

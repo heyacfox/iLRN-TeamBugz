@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DuckPurchase : MonoBehaviour
 {
-    public TMP_Text duckPurchasePrice;
+    public Text duckPurchasePrice;
     public float purchasePrice = 0.05f;
     public GameObject duckPrefab;
     public Transform duckSpawnLocation;
@@ -45,7 +46,7 @@ public class DuckPurchase : MonoBehaviour
 
     public void Update()
     {
-        string moneyText = $"£{gameManager.currentMoney}/£{purchasePrice.ToString()}";
+        string moneyText = $"KSh {gameManager.currentMoney}/KSh {purchasePrice.ToString()}";
         if (gameManager.currentMoney >= purchasePrice)
         {
             moneyText += "\nBUY DUCK NOW!";
